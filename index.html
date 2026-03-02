@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mandy Intel — March 2, 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap');
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#0d0018;color:#f0e8ff;font-family:'Inter',sans-serif;padding-bottom:80px;}
+    header{background:linear-gradient(135deg,#0d0018 0%,#1a0030 60%,#0d0018 100%);color:#f0e8ff;padding:48px 40px 32px;position:relative;overflow:hidden;border-bottom:3px solid #e91e8c;}
+    header::before{content:'👑';position:absolute;right:40px;top:20px;font-size:120px;opacity:0.07;}
+    header::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 80% 50%,rgba(233,30,140,0.08) 0%,transparent 60%);pointer-events:none;}
+    .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:0.35em;color:#e91e8c;margin-bottom:12px;}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,80px);font-weight:600;line-height:1;color:#f0e8ff;}
+    h1 em{font-style:italic;color:#ffd700;}
+    .for-mandy{font-family:'Cormorant Garamond',serif;font-size:14px;color:#ffd700;margin-top:6px;letter-spacing:0.15em;}
+    .header-tagline{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:#e91e8c;margin-top:8px;letter-spacing:0.05em;}
+    .header-meta{margin-top:16px;font-size:11px;color:#9a7ab0;display:flex;gap:20px;flex-wrap:wrap;}
+    .week-banner{background:linear-gradient(90deg,#1a0030,#2a0050,#1a0030);color:#f0e8ff;padding:12px 40px;font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;letter-spacing:0.05em;border-bottom:2px solid #e91e8c;}
+    .zone-summary{background:#100020;padding:24px 40px;border-bottom:3px solid #e91e8c;}
+    .summary-label{font-family:'Cormorant Garamond',serif;font-size:13px;text-transform:uppercase;letter-spacing:0.25em;color:#ffd700;margin-bottom:12px;}
+    .summary-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .summary-list li{font-size:13px;color:#d0b8f0;line-height:1.6;padding-left:16px;position:relative;}
+    .summary-list li::before{content:'—';position:absolute;left:0;color:#e91e8c;}
+    .summary-list li strong{color:#f0e8ff;}
+    .zone{padding:44px 40px;}
+    .zone-royals{background:#0f0520;border-top:4px solid #4a1a6b;}
+    .zone-reality{background:#0d0018;border-top:4px solid #e91e8c;}
+    .zone-life{background:#100018;border-top:4px solid #c9748a;}
+    .zone-dating{background:#0f0015;border-top:4px solid #e8614a;}
+    .zone-dirt{background:#080005;border-top:4px solid #8b0000;}
+    .zone-world{background:#050d20;border-top:4px solid #2a4a7a;}
+    .zone-tv{background:#050e12;border-top:4px solid #1a6b5a;}
+    .zone-head{display:flex;align-items:baseline;gap:12px;margin-bottom:28px;}
+    .zone-label{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;}
+    .zone-royals .zone-label{color:#b06eda;}
+    .zone-reality .zone-label{color:#e91e8c;}
+    .zone-life .zone-label{color:#c9748a;}
+    .zone-dating .zone-label{color:#e8614a;}
+    .zone-dirt .zone-label{color:#cc2222;}
+    .zone-world .zone-label{color:#4a7acc;}
+    .zone-tv .zone-label{color:#1a9b7a;}
+    .zone-desc{font-size:12px;color:#8a7a9a;font-style:italic;margin-left:6px;}
+    .zone-rule{flex:1;height:1px;opacity:0.15;background:currentColor;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;}
+    .card{padding:0;border:1px solid;background:#120022;text-decoration:none;color:inherit;display:block;transition:box-shadow 0.15s,transform 0.15s;overflow:hidden;border-radius:2px;}
+    .card:hover{box-shadow:0 6px 28px rgba(233,30,140,0.18);transform:translateY(-2px);}
+    .zone-royals .card{border-color:#4a1a6b;background:#13052a;}
+    .zone-reality .card{border-color:#7a0a4a;background:#110020;}
+    .zone-life .card{border-color:#6a3048;background:#110020;}
+    .zone-dating .card{border-color:#6a2018;background:#110020;}
+    .zone-dirt .card{border-color:#5a0000;background:#0d0005;}
+    .zone-world .card{border-color:#1a2a5a;background:#080d20;}
+    .zone-tv .card{border-color:#0a3a2a;background:#050e12;}
+    .card-body{padding:20px 20px 0;}
+    .card-tag{font-size:10px;text-transform:uppercase;letter-spacing:0.2em;font-weight:600;margin-bottom:8px;}
+    .zone-royals .card-tag{color:#b06eda;}
+    .zone-reality .card-tag{color:#e91e8c;}
+    .zone-life .card-tag{color:#c9748a;}
+    .zone-dating .card-tag{color:#e8614a;}
+    .zone-dirt .card-tag{color:#cc4444;}
+    .zone-world .card-tag{color:#4a7acc;}
+    .zone-tv .card-tag{color:#1a9b7a;}
+    .card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;line-height:1.3;margin-bottom:10px;color:#f0e8ff;}
+    .card-summary{font-size:13px;line-height:1.75;color:#b09ac8;margin-bottom:16px;}
+    .card-blocks{border-top:1px solid rgba(255,255,255,0.06);}
+    .block{padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.05);}
+    .block:last-child{border-bottom:none;}
+    .block-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:5px;display:flex;align-items:center;gap:6px;}
+    .block-means{background:rgba(255,215,0,0.05);}
+    .block-means .block-label{color:#ffd700;}
+    .block-takeaway{background:rgba(233,30,140,0.06);}
+    .block-takeaway .block-label{color:#e91e8c;}
+    .block-text{font-size:12px;line-height:1.7;color:#d0b8f0;}
+    .card-foot{padding:10px 20px;font-size:11px;color:#6a5a7a;display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);}
+    .zone-dirt .card h3{color:#f5e0e0;}
+    .zone-dirt .card-summary{color:#b09098;}
+    .zone-dirt .block-means{background:rgba(139,0,0,0.12);}
+    .zone-dirt .block-means .block-label{color:#ff6060;}
+    .zone-dirt .block-takeaway{background:rgba(80,0,0,0.15);}
+    .zone-dirt .block-takeaway .block-label{color:#e91e8c;}
+    .zone-dirt .block-text{color:#c8a8a8;}
+    .zone-dirt .card-foot{color:#6a4040;}
+    footer{background:#0d0018;color:#e91e8c;text-align:center;padding:20px 40px;font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;letter-spacing:0.05em;border-top:2px solid #4a1a6b;}
+    footer span{color:#6a4a7a;}
+    @media(max-width:768px){header,.zone,.week-banner,.zone-summary{padding:20px 16px;}.header-meta{flex-direction:column;gap:6px;}.cards{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Pop Culture Intelligence</div>
+    <h1>Mandy <em>Intel</em></h1>
+    <div class="for-mandy">For Mandy</div>
+    <div class="header-tagline">Pop Culture. No Filter.</div>
+    <div class="header-meta">
+      <span>Monday, March 2, 2026</span>
+      <span>Issue No. 1</span>
+      <span>Powered by Wally</span>
+    </div>
+  </header>
+
+  <div class="week-banner">Monday morning intel — because you deserve to know everything before everyone else does</div>
+
+  <div class="zone-summary">
+    <div class="summary-label">Today at a glance</div>
+    <ul class="summary-list">
+      <li><strong>Royal Watch:</strong> William and Kate are getting roasted for vacationing and attending the BAFTAs while Prince Andrew's Epstein fallout explodes — plus a new book drops bombshells about William's tabloid rage over Kate's topless scandal. Also: the William/Harry relationship is reportedly at an all-time low.</li>
+      <li><strong>Reality TV:</strong> The Traitors US S4 finale just aired — Rob Rausch played EVERYONE and Maura Higgins was devastated. RHOP Season 10 wrapped with Karen back from legal jeopardy and Wendy dealing with a fraud arrest. Lisa Rinna says Puppygate was fake.</li>
+      <li><strong>Life Events:</strong> Martin Short's daughter Katherine died by suicide at 42 — he skipped the SAGs. James Brolin (Barbra Streisand's husband) has terminal cancer at 85. Shia LaBeouf has been arrested twice in 10 days; Mia Goth looked amazing at the SAGs.</li>
+      <li><strong>Dating:</strong> Zendaya and Tom Holland are MARRIED — Law Roach confirmed it on the SAG Awards red carpet. Bad Bunny got back with his ex after the Super Bowl. Andrew Garfield and Monica Barbaro are reportedly hitting relationship trouble.</li>
+      <li><strong>The Dirt:</strong> Naomi Campbell named in the latest Epstein file drop. Elon Musk and Howard Lutnick on a DC "Epstein Walk of Shame" installation near the White House. Mel Gibson's Oprah-Epstein claims are going viral. Beatrice and Eugenie suffer quietly while their father's legacy burns.</li>
+      <li><strong>World Drama:</strong> The US and Israel bombed 2,000+ targets in Iran overnight. Iran retaliated with hundreds of missiles and drones. Reports suggest Khamenei may have been killed. Congress is debating war powers while the bombing is literally still happening.</li>
+      <li><strong>Streaming:</strong> Landman Season 2 just became the biggest streaming return in US history. Spring 2026 reality TV is stacked — new Bachelorette, Padma's new show, more Housewives. You're going to be busy.</li>
+    </ul>
+  </div>
+
+  <!-- ROYAL WATCH -->
+  <div class="zone zone-royals">
+    <div class="zone-head"><div class="zone-label">👑 Royal Watch</div><div class="zone-desc">William · Kate · Harry — no one else</div><div class="zone-rule"></div></div>
+    <div class="cards">
+
+      <a class="card" href="https://www.yahoo.com/entertainment/celebrity/articles/prince-william-kate-middleton-slammed-003007117.html" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Royal Optics / Andrew Fallout</div>
+          <h3>William &amp; Kate Called "Out of Touch" and "Complicit" for Going on Vacation and Attending the BAFTAs While Prince Andrew's Epstein Scandal Explodes</h3>
+          <div class="card-summary">As the internet lights up over Prince Andrew's ties to Jeffrey Epstein, William and Kate chose this exact moment to take a holiday and attend the BAFTAs — and critics are calling them "complicit" in the Palace's long protection of Andrew. Royal commentators argue that staying silent while your family member's scandal consumes the institution is itself a choice, and not a good look. The optics are genuinely rough.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">This is the central tension in the Royal Family right now — William and Kate want to be the "good" modernizing royals, but every time Andrew implodes they choose silence. And that silence is getting harder to defend. People who used to be sympathetic are starting to turn.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"William and Kate went on VACATION while the Epstein stuff is blowing up 💀 the audacity to also attend the BAFTAs like everything is fine. The Palace really said 'not our circus' but it IS your circus William, it IS."</div></div>
+        </div>
+        <div class="card-foot"><span>Yahoo Entertainment</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.wfmd.com/2026/03/02/prince-william-was-ready-to-go-to-war-with-the-press-over-kate-middletons-topless-photos-scandal-book/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">New Book / Royal Rage</div>
+          <h3>New Book Reveals William Was "Ready to Go to War with the Press" Over Kate's Topless Photos — He Was Absolutely Furious</h3>
+          <div class="card-summary">A new royal biography reveals that Prince William was seething when paparazzi secretly photographed Kate Middleton topless while sunbathing on a private vacation — and he was prepared to take on the entire British press corps if needed. The book paints a portrait of a far angrier, more combative William than the measured public persona we usually see. The original photos were published in French magazine Closer in 2012 and caused an international incident.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">We keep hearing William is the calm one — but this book suggests a much angrier, fiercely protective person underneath. The "ready to declare war on the press" energy feels very much like someone who watched his mother get hunted by tabloids and vowed it would never happen to his wife. Understandable. Still unhinged. Both can be true.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"A new book says William was ready to DECLARE WAR on the British press over Kate's topless photos 😭 the man is unhinged in the most protective husband way. He contains multitudes apparently."</div></div>
+        </div>
+        <div class="card-foot"><span>WFMD / Express</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.instyle.com/prince-william-prince-harry-relationship-update-amid-strain-11917045" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Brothers / The Ongoing Saga</div>
+          <h3>Royal Biographer: William and Harry's Relationship "Couldn't Be Worse" — Kate's Remission Actually Made Things Worse for Harry</h3>
+          <div class="card-summary">Royal biographer Russell Myers — who literally wrote the definitive book on the Wales-Sussex saga — says the relationship between William and Harry has hit an all-time low with no reconciliation in sight. More surprisingly, he says Kate's cancer remission actually shifted William's priorities away from fixing things with Harry rather than toward it. The brothers are reportedly not in contact.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Myers is credible with real sources — when he says it's bad, it's bad. And the detail that Kate's recovery made things worse for Harry's chances of reconciliation is genuinely interesting psychology. William survived the hardest year of his life and apparently the lesson wasn't "family matters." That's a choice.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"The royal biographer with the actual access is saying William and Harry 'couldn't be worse' right now. So all those reconciliation stories? Fake!! Kate getting better apparently made William LESS interested in making up with Harry. Ouch."</div></div>
+        </div>
+        <div class="card-foot"><span>InStyle / The News</span><span>Mar 2, 2026</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- REALITY TV -->
+  <div class="zone zone-reality">
+    <div class="zone-head"><div class="zone-label">📺 Reality TV</div><div class="zone-desc">Housewives · Traitors · Below Deck · Love After Lockup</div><div class="zone-rule"></div></div>
+    <div class="cards">
+
+      <a class="card" href="https://www.elle.com/culture/movies-tv/a70566863/maura-higgins-traitors-finale-interview-2026/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">The Traitors US S4 / Finale</div>
+          <h3>The Traitors US Finale: Rob Rausch Wins With "I Am, and Have Always Been, a Traitor" — Maura Higgins Was Left Absolutely Stunned</h3>
+          <div class="card-summary">The Season 4 finale of The Traitors US ended with Rob Rausch delivering one of the most iconic reality TV lines in recent memory, taking the prize as the sole surviving Traitor while the Faithfuls — including a devastated Maura Higgins — stood there in complete disbelief. The season also featured a secret fourth Traitor hidden even from the other Traitors themselves until episode 4, which added an extra layer of chaos to an already wild season. Maura told Elle she "feels like a winner" regardless, which is very on-brand.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Rob was a masterclass in lying with a smile for an entire season. The secret fourth Traitor twist made this season impossible to figure out even for the most strategic players. Maura Higgins being devastated but gracious about it is peak human content. This finale delivered.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"'I am, and have ALWAYS been, a Traitor' 🤌 Rob on The Traitors played every single person and it was PERFECTION. Maura's face at that moment?? Television. Did you see the finale??"</div></div>
+        </div>
+        <div class="card-foot"><span>Elle / Peacock</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.hollywoodreporter.com/tv/tv-features/real-housewives-potomac-karen-return-wendy-arrest-season-10-1236518444/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">RHOP / Season 10 Finale</div>
+          <h3>RHOP Season 10 Wraps With Karen's Comeback Post-DUI and Wendy Osefo's Fraud Arrest Hanging Over Everything — Bravo Exec Breaks Silence</h3>
+          <div class="card-summary">The Real Housewives of Potomac wrapped its 10th season Sunday night — Karen Huger made her full return after her drunk driving conviction while Wendy Osefo navigated a fraud arrest that cast a shadow over the entire season. A Bravo executive opened up to The Hollywood Reporter about producing a season where two cast members were simultaneously dealing with real legal scandals. The reunion vibes were reportedly described as "cold" and "dark."</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">RHOP is not playing around in Season 10. Karen is the Grand Dame and watching her comeback arc while Wendy's fraud situation plays out in parallel makes for genuinely compelling and uncomfortable television. The kind where you feel slightly bad watching but absolutely can't stop.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"RHOP Season 10 finale aired last night and they had TWO housewives with actual legal cases this season 😭 Karen's back from her DUI stuff, Wendy's got a fraud arrest — Potomac really said 'boring is not on the table.' Did you watch??"</div></div>
+        </div>
+        <div class="card-foot"><span>Hollywood Reporter / Bravo</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://realityblurb.com/2026/03/01/lisa-rinna-says-lisa-vanderpumps-puppygate-drama-was-a-ploy-to-drive-her-next-spinoff-as-teddi-reveals-her-involvement-and-rinna-shares-her-rhobh-regrets/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">RHOBH / Rinna Returns</div>
+          <h3>Lisa Rinna Drops a Bomb: LVP's Entire Puppygate Drama Was a Calculated Ploy to Launch Her Own Spinoff Show</h3>
+          <div class="card-summary">Lisa Rinna is back and she came with receipts — or at least accusations. She's claiming that Lisa Vanderpump engineered the entire Puppygate scandal specifically to create drama that would fuel the launch of her next spinoff project, with Teddi Mellencamp also stepping forward to reveal her own role in the situation. Rinna also shared her broader RHOBH regrets. If true, this rewrites everything you thought you knew about one of the most iconic Housewives storylines ever.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Puppygate is RHOBH canon — the dog drama that tore apart the entire cast. If LVP manufactured it for her own career benefit, that's either the most genius media manipulation in reality TV history or Rinna is still very, very salty. The answer is probably "both, actually."</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"LISA RINNA IS SAYING PUPPYGATE WAS FAKE AND MANUFACTURED BY LVP FOR HER SPINOFF 😭 I am completely rewatching that season in my head right now. Teddi confirmed she was involved too. The betrayal levels are off the chart."</div></div>
+        </div>
+        <div class="card-foot"><span>Reality Blurb</span><span>Mar 1, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://nationaltoday.com/us/ga/atlanta/news/2026/03/01/rhoa-star-drew-sidora-addresses-social-media-feud-with-castmate-kelli-ferrell/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">RHOA / Atlanta Is Delivering</div>
+          <h3>RHOA Double Chaos: Kenya Moore vs Britt Eady Escalates, While Drew Sidora vs Kelli Ferrell Plays Out Publicly on Social Media</h3>
+          <div class="card-summary">Real Housewives of Atlanta is genuinely delivering this season — tensions between Kenya Moore and newcomer Britt Eady escalated into a very public dispute over on-set behavior, while separately, Drew Sidora is publicly setting the record straight on her social media feud with castmate Kelli Ferrell that's been unfolding in real time. Atlanta feels alive again.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">The Kenya vs new girl dynamic is very RHOA-coded, but the Britt Eady situation sounds genuinely messy rather than staged. And Drew Sidora fighting Kelli Ferrell in public on Instagram is the exact kind of unfiltered beef that makes reality TV worth watching in real time.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"RHOA is actually good again?? Kenya's going at the new girl Britt and it sounds MESSY messy, plus Drew Sidora and Kelli Ferrell are fighting publicly on Instagram. Atlanta has entered its redemption arc and I am HERE for it."</div></div>
+        </div>
+        <div class="card-foot"><span>National Today / Instagram</span><span>Mar 1, 2026</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- LIFE EVENTS -->
+  <div class="zone zone-life">
+    <div class="zone-head"><div class="zone-label">🌹 Life Events</div><div class="zone-desc">Sick · Dying · Divorcing · Marrying</div><div class="zone-rule"></div></div>
+    <div class="cards">
+
+      <a class="card" href="https://radaronline.com/p/martin-short-skips-32nd-actor-awards-daughters-death/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Tragedy / Martin Short</div>
+          <h3>Martin Short's Daughter Katherine, 42, Died by Suicide Last Week — He Quietly Skipped the SAG Awards</h3>
+          <div class="card-summary">Martin Short's eldest daughter Katherine Hartley Short died by suicide on February 24th at age 42, and just days later, her father skipped the SAG Actor Awards where his co-stars were being honored. The family released a statement confirming the cause of death. This is especially heartbreaking because Short lost his wife Nancy to ovarian cancer in 2010 — this family has faced more grief than any of us would know from watching him perform.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Martin Short is one of the most beloved entertainers alive — endlessly warm, funny, genuinely kind by all accounts. His absence from the SAGs said everything without saying anything. His co-stars at the ceremony were visibly emotional. There's nothing to say except this is devastating.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Did you hear about Martin Short's daughter? She passed away last week at 42 💔 He skipped the SAG Awards because of it. He already lost his wife to cancer years ago. My heart breaks for him. Please check on your people."</div></div>
+        </div>
+        <div class="card-foot"><span>TMZ / People</span><span>Feb 24 – Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.aol.com/articles/james-van-der-beek-wife-200001286.html" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">In Memoriam / Dawson's Creek</div>
+          <h3>James Van Der Beek and His Wife Renewed Their Vows Just Two Days Before He Died of Cancer at 48</h3>
+          <div class="card-summary">James Van Der Beek — forever Dawson Leery from Dawson's Creek — died of colorectal cancer on February 11th at age 48. A detail that's resurfacing this week: he and his wife Kimberly renewed their vows just two days before his death, a moment of profound love at the end. Michelle Williams gave an emotional tribute to him at the SAG Awards this weekend. He was diagnosed with Stage 3 colorectal cancer in 2023 and documented his journey publicly.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">The vow renewal detail — two days before he died — is the kind of thing that just breaks your heart in the most beautiful way. James Van Der Beek spent the last years of his life being publicly honest about his diagnosis, his treatment, and his love for his family. Michelle Williams honoring him at the SAGs made for one of the most genuine moments of the night.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"James Van Der Beek renewed his vows with his wife TWO DAYS before he died 💔 And Michelle Williams gave him a tribute at the SAGs that apparently had everyone crying. Hug someone you love today. Seriously."</div></div>
+        </div>
+        <div class="card-foot"><span>AOL / Page Six</span><span>Feb 11 – Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://pagesix.com/2026/03/01/entertainment/mia-goth-attends-2026-sag-actor-awards-after-shia-labeouf-arrest-split/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Split / Legal Chaos / Mia's Freedom Era</div>
+          <h3>Mia Goth Walked the SAG Awards Looking Flawless While Shia LaBeouf Got Arrested for Battery — For the Second Time in 10 Days</h3>
+          <div class="card-summary">Mia Goth made her first public appearance at the SAG Awards since her split from estranged husband Shia LaBeouf — and looked completely unbothered while doing it. Shia, meanwhile, has been arrested for battery for a second time in 10 days, a genuinely remarkable amount of chaos in a very short window. Friends of Shia are telling outlets he "tried everything" to save the marriage, which is doing an interesting amount of work given the arrest record.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">The contrast is perfect — Mia gliding down the red carpet looking like art while Shia is somewhere being fingerprinted for the second time in 10 days. "He tried everything to save the marriage" is a statement that requires a lot of context when you learn what everything apparently included.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Mia Goth at the SAGs looking like an actual goddess while her estranged husband gets arrested for battery for the SECOND TIME IN TEN DAYS 😭 She is SO free. She is thriving. Let her live."</div></div>
+        </div>
+        <div class="card-foot"><span>Page Six / TMZ</span><span>Mar 1–2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.facebook.com/groups/215155240781012/posts/1263354379294421/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Health / Barbra's Family</div>
+          <h3>James Brolin, 85, Diagnosed with Late-Stage Terminal Cancer — Barbra Streisand's Husband of Nearly 30 Years</h3>
+          <div class="card-summary">James Brolin — iconic actor and Barbra Streisand's devoted husband since 1998 — has reportedly been diagnosed with late-stage terminal cancer at 85, confirmed within the last 48 hours and reportedly being treated at MD Anderson. Brolin and Streisand are one of Hollywood's great love stories, having stayed together through nearly three decades of fame, family, and everything that comes with it.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Barbra Streisand is a legend and James Brolin has been her constant for almost 30 years. Their love story — older woman, younger man, Hollywood doubters, lasting romance — is the kind of thing that made people believe. This news is going to hit a lot of people very hard.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"James Brolin has been diagnosed with terminal cancer 💔 Barbra Streisand's husband of almost 30 years, 85 years old. They're genuine Hollywood royalty. Sending all the love to their family."</div></div>
+        </div>
+        <div class="card-foot"><span>Social Reports / MD Anderson</span><span>Mar 2, 2026</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- WHO'S DATING WHO -->
+  <div class="zone zone-dating">
+    <div class="zone-head"><div class="zone-label">💋 Who's Dating Who</div><div class="zone-desc">New couples · Breakups · Confirmed</div><div class="zone-rule"></div></div>
+    <div class="cards">
+
+      <a class="card" href="https://people.com/zendaya-and-tom-holland-are-married-stylist-law-roach-claims-8769894" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">MARRIED 🎊 / Zendaya × Tom Holland</div>
+          <h3>CONFIRMED: Zendaya and Tom Holland Are Secretly Married — Her Stylist Law Roach Just Casually Told the Whole World at the SAG Awards</h3>
+          <div class="card-summary">It's official and it's glorious: Zendaya and Tom Holland have privately tied the knot, and the world found out when stylist Law Roach told Access Hollywood on the SAG Awards red carpet, completely casually, "The wedding has already happened." Zendaya had been spotted wearing a gold band for weeks prior — which is the most obvious hint that somehow nobody officially clocked. They got engaged over the holidays and apparently wasted no time.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">This is the celebrity wedding we were waiting for without knowing we were waiting for it. They've kept their relationship almost impossibly private for years and then Law Roach just TELLS everyone on a red carpet like he's mentioning the weather. The gold band that people noticed weeks ago now makes perfect sense. Zendaya has been married this whole time and we had no idea.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"ZENDAYA AND TOM HOLLAND GOT SECRETLY MARRIED AND WE FOUND OUT BECAUSE HER STYLIST MENTIONED IT CASUALLY AT THE SAG AWARDS??? She was wearing the ring for WEEKS. I am DECEASED. This is the content we deserve."</div></div>
+        </div>
+        <div class="card-foot"><span>People / CNN / Variety</span><span>Mar 1–2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.aol.com/articles/bad-bunny-reignites-romance-ex-172022190.html" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Back Together / Bad Bunny</div>
+          <h3>Bad Bunny Reignited His Romance with Ex Gabriela Berlingeri Immediately After His Super Bowl Halftime Show</h3>
+          <div class="card-summary">Bad Bunny and his longtime on-again, off-again girlfriend Gabriela Berlingeri are back together, with the reunion apparently timed to right after his Super Bowl 2026 halftime performance. The couple had been split for a while, but the Super Bowl seems to have reignited something — or they just can't stay away from each other, which honestly tracks for this particular relationship dynamic.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Bad Bunny headlined the Super Bowl and then immediately called his ex. That is extremely romantic in a "can't quit you even when I should" kind of way. Gabriela Berlingeri has always been kind of quietly glamorous and their on-off thing feels more inevitable reunion than toxic cycle.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Bad Bunny performed at the SUPER BOWL and then immediately got back with his ex 💀 Sir did you use the halftime show as a romantic gesture?? Because apparently it worked. Iconic behavior honestly."</div></div>
+        </div>
+        <div class="card-foot"><span>AOL Celebrity</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.realitytea.com/2026/03/01/monica-barbaro-andrew-garfield-romance-roadblock-relationship/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Trouble in Paradise / Barbaro × Garfield</div>
+          <h3>Andrew Garfield and Monica Barbaro Are Hitting a "Major Roadblock" — His Reported Need for Approval Is Straining Things</h3>
+          <div class="card-summary">Things are reportedly getting rocky for Andrew Garfield and Monica Barbaro — sources claim his "need for approval" is putting strain on their relationship and they've hit what insiders are describing as a "major roadblock." Barbaro, known for Top Gun: Maverick, and Garfield seemed like a solid couple but apparently the internal dynamics are more complicated than the public image.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Andrew Garfield has been everyone's dream man since the Amazing Spider-Man days and "needs too much reassurance" as a relationship flaw is very relatable but also very real. Monica Barbaro is talented, grounded, and low-key — she doesn't seem like someone with infinite patience for insecurity. This one bears watching.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Andrew Garfield and Monica Barbaro are reportedly in trouble because HE needs too much approval from her 😭 Andrew. You were SPIDER-MAN. You don't need external validation from literally anyone. Get it together babes."</div></div>
+        </div>
+        <div class="card-foot"><span>Reality Tea</span><span>Mar 1, 2026</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- THE DIRT -->
+  <div class="zone zone-dirt">
+    <div class="zone-head"><div class="zone-label">🩸 The Dirt</div><div class="zone-desc">Epstein · Scandals · Powerful people being exposed</div><div class="zone-rule"></div></div>
+    <div class="cards">
+
+      <a class="card" href="https://www.aol.com/articles/supermodel-naomi-campbell-named-epstein-211011503.html" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Epstein Files / Latest Drop</div>
+          <h3>Naomi Campbell Is the Latest Name to Surface in the DOJ's Epstein Files — Her Lawyer Is Already Pushing Back</h3>
+          <div class="card-summary">Supermodel and cultural icon Naomi Campbell has been named in the latest Department of Justice document release from the Jeffrey Epstein files, her lawyer confirmed while pushing back on the framing. The Epstein files have been released in waves and each drop adds more famous names — Campbell joining that list is a significant cultural moment regardless of what the documents ultimately say about the nature of any connection.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Naomi Campbell is one of the most famous women alive — a literal icon of the 20th and 21st century. Her name appearing in these documents is enormous, and the fact that her lawyer is already in damage-control mode suggests this is not going away quietly. Every new document drop is rewriting the history of the last 30 years of celebrity culture.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"NAOMI CAMPBELL is in the Epstein files. Her lawyer is spinning it already but still — every week another massive name gets added to this list and I am less shocked and more horrified every single time."</div></div>
+        </div>
+        <div class="card-foot"><span>AOL / DOJ Documents</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.aol.com/articles/elon-musk-howard-lutnick-among-143056942.html" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Epstein / DC Shame Wall</div>
+          <h3>An "Epstein Walk of Shame" Installation Appeared Near the White House — Elon Musk and Commerce Secretary Howard Lutnick Are Both On It</h3>
+          <div class="card-summary">An anonymous art installation dubbed the "Epstein Walk of Shame" popped up in Washington DC within walking distance of the White House, featuring the names and images of powerful people connected to Jeffrey Epstein's network — and both Elon Musk and Commerce Secretary Howard Lutnick appear on it. The installation is clearly a political statement timed to the ongoing document releases and it is getting photographed and shared extensively.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Someone put up a public Epstein shame display near the White House and named two of the most powerful men in America on it. The fact that it hasn't been immediately torn down is itself a statement. This is the kind of cultural protest that gets documented and referenced for years — and it shows how the Epstein story has fully collided with current political power.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Someone put an 'Epstein Walk of Shame' display up NEAR THE WHITE HOUSE with Elon Musk and a Cabinet secretary on it 😭 The art world is not playing around this year. Screenshot this before it disappears."</div></div>
+        </div>
+        <div class="card-foot"><span>AOL Entertainment</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.facebook.com/Singerpriyarani/posts/shocking-oprah-winfrey-faces-backlash-after-mel-gibsons-epstein-tape-claims-go-v/1506583507495806/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Epstein / Oprah + Mel Gibson</div>
+          <h3>Oprah Winfrey Faces Backlash After Mel Gibson's Claims About Epstein "Tapes" Involving Her Go Completely Viral</h3>
+          <div class="card-summary">Mel Gibson has made public claims connecting Oprah Winfrey to alleged Jeffrey Epstein surveillance tapes, and those claims have gone massively viral — generating significant backlash directed at Oprah even as the veracity of Gibson's statements remains unverified. This is the intersection of conspiracy-adjacent allegations and real celebrity that's dominating social media right now, and Oprah's team is having a very rough week.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Mel Gibson making claims about Oprah Winfrey and Epstein tapes is genuinely surreal, but in the current climate — where real Epstein documents are dropping weekly and multiple famous names are being confirmed — the line between verified information and rumor is getting very blurry. Oprah's team has to respond to this whether they want to or not.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Mel Gibson is making claims about Oprah and Epstein tapes and it's going absolutely viral 😭 I don't know what's real anymore but this week in celebrity news has been genuinely A LOT. Like a LOT a lot."</div></div>
+        </div>
+        <div class="card-foot"><span>Social / Viral Reports</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.yahoo.com/entertainment/celebrity/articles/princess-beatrice-princess-eugenie-hugely-144647800.html" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Royal Adjacent / Epstein Collateral</div>
+          <h3>Princess Beatrice and Eugenie Suffer a "Fresh Blow" with Every New Epstein Disclosure — Their Father Prince Andrew at the Center of It All</h3>
+          <div class="card-summary">As Epstein document releases keep coming, the collateral damage is landing on Beatrice and Eugenie — Prince Andrew's daughters — who reportedly face a "fresh blow" with each new disclosure about their father's ties to Epstein's network. Reports describe the sisters' situation as "hugely different" from anything they expected when they entered public royal life. They've largely stayed silent while their father's legacy burns around them.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Beatrice and Eugenie are genuinely innocent people getting repeatedly punished for their father's choices. They've tried to build their own separate identities — Beatrice with her family, Eugenie with her charitable work — but every new Andrew/Epstein document undoes that. It's a quiet tragedy playing out in slow motion and nobody talks about it.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"I actually feel terrible for Beatrice and Eugenie — imagine every week there's a new horrifying Epstein thing about your DAD and you just have to keep showing up. They didn't choose this. The quiet suffering of those two is genuinely heartbreaking."</div></div>
+        </div>
+        <div class="card-foot"><span>Yahoo Celebrity</span><span>Mar 2, 2026</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- WORLD DRAMA -->
+  <div class="zone zone-world">
+    <div class="zone-head"><div class="zone-label">🌍 World Drama</div><div class="zone-desc">When the news is too big to ignore</div><div class="zone-rule"></div></div>
+    <div class="cards">
+
+      <a class="card" href="https://www.nytimes.com/2026/03/02/briefing/the-war-expands.html" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Iran War / US + Israel Strike</div>
+          <h3>The US and Israel Bombed 2,000+ Targets in Iran Overnight — Iran Retaliated with Hundreds of Missiles and Drones. This Is Happening Right Now.</h3>
+          <div class="card-summary">Overnight, the United States and Israel conducted massive strikes against more than 2,000 targets across Iran — hitting missile sites, naval headquarters, and warships — while Iran retaliated by launching hundreds of missiles and drones against Israel and Persian Gulf countries. Reports are emerging that Iran's Supreme Leader Ayatollah Khamenei may have been killed in the strikes. Congress is now debating war powers while the bombing is still happening. This is a major escalation of conflict that began in 2025.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">2,000+ targets is not a limited strike — that is a full-scale military campaign. Iran responding with hundreds of missiles means we are in an active, escalating conflict between major powers in one of the world's most critical regions. Oil prices, travel, global markets, and regional stability are all affected in real time. Put on the news tonight.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Hey so the US and Israel bombed 2,000+ targets in Iran last night and Iran is firing hundreds of missiles back and Congress is arguing about whether it was even legal — WHILE IT'S STILL HAPPENING. This is the news. Check in with your people today."</div></div>
+        </div>
+        <div class="card-foot"><span>NYT / Guardian / NPR</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.dropsitenews.com/p/iran-war-trump-israel-khamenei-assassination-retaliation-gulf-states" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Iran / Khamenei + Escalation</div>
+          <h3>Iran's Supreme Leader Khamenei May Have Been Assassinated — War Is Now Expanding to Gulf States as Militias Mobilize</h3>
+          <div class="card-summary">Reports indicate that Iran's Supreme Leader Ayatollah Ali Khamenei was killed in the strikes — which, if confirmed, would be one of the most significant political assassinations in modern history. Simultaneously, Iran is expanding its retaliatory strikes to include Gulf states and Iranian-backed militias across the region are being activated. Trump is apparently floating "new talks" even as bombs are still dropping, which is a remarkable sentence to have to write.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">If Khamenei is dead, there is no modern precedent for what comes next inside Iran — the power vacuum alone would be historic, let alone during an active military attack. The expansion of strikes to Gulf states means this is not a contained conflict. This is genuinely one of the most significant geopolitical moments in a generation.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Reports are saying Iran's Supreme Leader might have been killed in the strikes and Iran is now hitting Gulf states too and militias are mobilizing across the region. This is genuinely a huge, huge moment. Please be watching the news."</div></div>
+        </div>
+        <div class="card-foot"><span>Drop Site News / Al Jazeera</span><span>Mar 2, 2026</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- STREAMING & SHOWS -->
+  <div class="zone zone-tv">
+    <div class="zone-head"><div class="zone-label">🎬 Streaming &amp; Shows</div><div class="zone-desc">New seasons · What to watch · What's coming</div><div class="zone-rule"></div></div>
+    <div class="cards">
+
+      <a class="card" href="https://entertainment.substack.com/p/landman-is-the-biggest-season-two" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Paramount+ / Landman S2</div>
+          <h3>Landman Season 2 Just Became the Biggest Streaming Season Return in US History — Clear Your Schedule</h3>
+          <div class="card-summary">Landman Season 2 has broken records as the largest Season 2 return in the history of US streaming, surpassing every other show that came back for a second season in terms of viewership growth. The Billy Bob Thornton oil industry drama exploded in Season 1 and the audience showed up even bigger this time. If you haven't started this show yet, you are genuinely behind and your coworkers are already talking about it.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Landman is not what you expect — it's a sharp, prestige drama wrapped around the Texas oil industry with Billy Bob Thornton operating at a level that should be winning every award in sight. "Biggest streaming return in history" means this is now a genuine cultural phenomenon and you need to be able to talk about it.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Landman Season 2 is literally the biggest streaming RETURN in US history — have you started it?? Billy Bob Thornton is giving everything in this show. I need a watch party. This weekend?"</div></div>
+        </div>
+        <div class="card-foot"><span>Paramount+ / Substack</span><span>Mar 2, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.realityblurred.com/realitytv/2026/03/new-reality-tv-shows-seasons-spring-2026/" target="_blank">
+        <div class="card-body">
+          <div class="card-tag">Spring 2026 Preview / Reality Wave</div>
+          <h3>Spring 2026 Reality TV Is Stacked — New Bachelorette, Padma Lakshmi's New Competition Show, More Housewives, and a Top Model Exposé Doc</h3>
+          <div class="card-summary">Spring 2026 reality TV is genuinely loaded — a brand new Bachelorette season is incoming, Padma Lakshmi has launched her own competition series after leaving Top Chef, multiple Real Housewives franchises are dropping new seasons, and a new documentary exposing Top Model behind-the-scenes is generating early buzz. Plus HGTV has a bunch of new shows. Your evenings through June are effectively spoken for.</div>
+        </div>
+        <div class="card-blocks">
+          <div class="block block-means"><div class="block-label">💡 Why you care</div><div class="block-text">Spring is when networks load up on reality TV and this year the lineup looks legitimately strong. Padma going solo post-Top Chef is a story in itself. The Bachelorette is reportedly cast with an interesting lead. And a Top Model exposé documentary in 2026 is perfectly timed cultural archaeology. Start planning your viewing schedule now.</div></div>
+          <div class="block block-takeaway"><div class="block-label">✅ Send this to your group chat</div><div class="block-text">"Spring 2026 reality TV: new Bachelorette, Padma has her OWN show now, more Housewives, AND there's apparently a Top Model exposé documentary coming 👀 My calendar is already blocked. We need a whole watch party schedule."</div></div>
+        </div>
+        <div class="card-foot"><span>Reality Blurred / HGTV</span><span>Mar 2, 2026</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    Mandy Intel &mdash; Pop Culture. No Filter. &mdash; Issue No. 1, March 2, 2026<br/>
+    <span>Made with love and zero restraint by Wally &middot; For Mandy, always</span>
+  </footer>
+
+</body>
+</html>
