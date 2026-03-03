@@ -1,450 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mandy Intel — March 3, 2026</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MANDY INTEL — March 3, 2026</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap');
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{background:#0d0018;color:#f0e8ff;font-family:'Inter',sans-serif;padding-bottom:80px;}
-    header{background:linear-gradient(135deg,#0d0018 0%,#1a0030 60%,#0d0018 100%);color:#f0e8ff;padding:48px 40px 32px;position:relative;overflow:hidden;border-bottom:3px solid #e91e8c;}
-    header::before{content:'👑';position:absolute;right:40px;top:20px;font-size:120px;opacity:0.07;}
-    header::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 80% 50%,rgba(233,30,140,0.08) 0%,transparent 60%);pointer-events:none;}
-    .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:0.35em;color:#e91e8c;margin-bottom:12px;}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,80px);font-weight:600;line-height:1;color:#f0e8ff;}
-    h1 em{font-style:italic;color:#ffd700;}
-    .for-mandy{font-family:'Cormorant Garamond',serif;font-size:14px;color:#ffd700;margin-top:6px;letter-spacing:0.15em;}
-    .header-tagline{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:#e91e8c;margin-top:8px;letter-spacing:0.05em;}
-    .header-meta{margin-top:16px;font-size:11px;color:#9a7ab0;display:flex;gap:20px;flex-wrap:wrap;}
-    .week-banner{background:linear-gradient(90deg,#1a0030,#2a0050,#1a0030);color:#f0e8ff;padding:12px 40px;font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;letter-spacing:0.05em;border-bottom:2px solid #e91e8c;}
-    .zone-summary{background:#100020;padding:24px 40px;border-bottom:3px solid #e91e8c;}
-    .summary-label{font-family:'Cormorant Garamond',serif;font-size:13px;text-transform:uppercase;letter-spacing:0.25em;color:#ffd700;margin-bottom:12px;}
-    .summary-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
-    .summary-list li{font-size:13px;color:#d0b8f0;line-height:1.6;padding-left:16px;position:relative;}
-    .summary-list li::before{content:'—';position:absolute;left:0;color:#e91e8c;}
-    .summary-list li strong{color:#f0e8ff;}
-    .zone{padding:44px 40px;}
-    .zone-royals{background:#0f0520;border-top:4px solid #4a1a6b;}
-    .zone-reality{background:#0d0018;border-top:4px solid #e91e8c;}
-    .zone-life{background:#100018;border-top:4px solid #c9748a;}
-    .zone-dating{background:#0f0015;border-top:4px solid #e8614a;}
-    .zone-dirt{background:#080005;border-top:4px solid #8b0000;}
-    .zone-world{background:#050d20;border-top:4px solid #2a4a7a;}
-    .zone-tv{background:#050e12;border-top:4px solid #1a6b5a;}
-    .zone-head{display:flex;align-items:baseline;gap:12px;margin-bottom:28px;}
-    .zone-label{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;}
-    .zone-royals .zone-label{color:#b06eda;}
-    .zone-reality .zone-label{color:#e91e8c;}
-    .zone-life .zone-label{color:#c9748a;}
-    .zone-dating .zone-label{color:#e8614a;}
-    .zone-dirt .zone-label{color:#cc2222;}
-    .zone-world .zone-label{color:#4a7acc;}
-    .zone-tv .zone-label{color:#1a9b7a;}
-    .zone-desc{font-size:12px;color:#8a7a9a;font-style:italic;margin-left:6px;}
-    .zone-rule{flex:1;height:1px;opacity:0.15;background:currentColor;}
-    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;}
-    .card{padding:0;border:1px solid;background:#120022;text-decoration:none;color:inherit;display:block;transition:box-shadow 0.15s,transform 0.15s;overflow:hidden;border-radius:2px;}
-    .card:hover{box-shadow:0 6px 28px rgba(233,30,140,0.18);transform:translateY(-2px);}
-    .zone-royals .card{border-color:#4a1a6b;background:#13052a;}
-    .zone-reality .card{border-color:#7a0a4a;background:#110020;}
-    .zone-life .card{border-color:#6a3048;background:#110020;}
-    .zone-dating .card{border-color:#6a2018;background:#110020;}
-    .zone-dirt .card{border-color:#5a0000;background:#0d0005;}
-    .zone-world .card{border-color:#1a2a5a;background:#080d20;}
-    .zone-tv .card{border-color:#0a3a2a;background:#050e12;}
-    .card-body{padding:20px 20px 0;}
-    .card-tag{font-size:10px;text-transform:uppercase;letter-spacing:0.2em;font-weight:600;margin-bottom:8px;}
-    .zone-royals .card-tag{color:#b06eda;}
-    .zone-reality .card-tag{color:#e91e8c;}
-    .zone-life .card-tag{color:#c9748a;}
-    .zone-dating .card-tag{color:#e8614a;}
-    .zone-dirt .card-tag{color:#cc4444;}
-    .zone-world .card-tag{color:#4a7acc;}
-    .zone-tv .card-tag{color:#1a9b7a;}
-    .card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;line-height:1.3;margin-bottom:10px;color:#f0e8ff;}
-    .card-summary{font-size:13px;line-height:1.75;color:#b09ac8;margin-bottom:16px;}
-    .card-blocks{border-top:1px solid rgba(255,255,255,0.06);}
-    .block{padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.05);}
-    .block:last-child{border-bottom:none;}
-    .block-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:5px;display:flex;align-items:center;gap:6px;}
-    .block-means{background:rgba(255,215,0,0.05);}
-    .block-means .block-label{color:#ffd700;}
-    .block-takeaway{background:rgba(233,30,140,0.06);}
-    .block-takeaway .block-label{color:#e91e8c;}
-    .block-text{font-size:12px;line-height:1.7;color:#d0b8f0;}
-    .card-foot{padding:10px 20px;font-size:11px;color:#6a5a7a;display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);}
-    .zone-dirt .card h3{color:#f5e0e0;}
-    .zone-dirt .card-summary{color:#b09098;}
-    .zone-dirt .block-means{background:rgba(139,0,0,0.12);}
-    .zone-dirt .block-means .block-label{color:#ff6060;}
-    .zone-dirt .block-takeaway{background:rgba(80,0,0,0.15);}
-    .zone-dirt .block-takeaway .block-label{color:#e91e8c;}
-    .zone-dirt .block-text{color:#c8a8a8;}
-    .zone-dirt .card-foot{color:#6a4040;}
-    footer{background:#0d0018;color:#e91e8c;text-align:center;padding:20px 40px;font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;letter-spacing:0.05em;border-top:2px solid #4a1a6b;}
-    footer span{color:#6a4a7a;}
-    @media(max-width:768px){header,.zone,.week-banner,.zone-summary{padding:20px 16px;}.header-meta{flex-direction:column;gap:6px;}.cards{grid-template-columns:1fr;}}
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bricolage+Grotesque:wght@400;600;800&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --pink: #FF0080; --lime: #00FF88; --blue: #00D4FF; --yellow: #FFE500; --white: #FAFAFA; --black: #0A0A0A; }
+    body { background: var(--white); color: var(--black); font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
+    .ticker-wrap { background: var(--black); color: var(--lime); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; overflow: hidden; padding: 10px 0; white-space: nowrap; border-bottom: 3px solid var(--lime); }
+    .ticker-content { display: inline-block; animation: ticker 45s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+    .ticker-item { margin-right: 60px; }
+    .ticker-sep { color: var(--pink); margin-right: 60px; }
+    header { background: var(--black); padding: 48px 40px 36px; position: relative; overflow: hidden; border-bottom: 4px solid var(--black); }
+    .header-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4em; color: var(--lime); margin-bottom: 12px; }
+    .header-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(56px, 12vw, 120px); font-weight: 800; line-height: 0.9; background: linear-gradient(90deg, var(--pink) 0%, var(--blue) 60%, var(--lime) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em; }
+    .header-sub { font-size: 18px; color: var(--white); margin-top: 14px; font-weight: 500; }
+    .header-sub span { color: var(--pink); }
+    .header-meta { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
+    .meta-pill { background: transparent; border: 2px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
+    .tea-bar { background: var(--pink); color: var(--white); padding: 20px 40px; border-bottom: 4px solid var(--black); }
+    .tea-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 10px; opacity: 0.8; }
+    .tea-items { display: flex; gap: 12px; flex-wrap: wrap; }
+    .tea-item { background: rgba(0,0,0,0.2); border: 2px solid rgba(255,255,255,0.3); border-radius: 100px; padding: 6px 16px; font-size: 13px; font-weight: 600; }
+    main { padding: 40px; max-width: 1400px; margin: 0 auto; }
+    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; margin-top: 48px; }
+    .section-header:first-child { margin-top: 0; }
+    .section-emoji { font-size: 36px; line-height: 1; }
+    .section-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+    .section-vibe { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: #666; margin-left: auto; }
+    .section-rule { flex: 1; height: 3px; background: var(--black); margin-left: 8px; }
+    .bento { display: grid; gap: 16px; }
+    .bento-2 { grid-template-columns: 1fr 1fr; }
+    .bento-3 { grid-template-columns: 2fr 1fr 1fr; }
+    .bento-1 { grid-template-columns: 1fr; }
+    .card { border: 3px solid var(--black); border-radius: 20px; padding: 28px; box-shadow: 5px 5px 0 var(--black); text-decoration: none; color: var(--black); display: flex; flex-direction: column; gap: 14px; transition: transform 0.1s, box-shadow 0.1s; position: relative; overflow: hidden; }
+    .card:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--black); }
+    .card.pink-card { background: var(--pink); color: var(--white); }
+    .card.lime-card { background: var(--lime); color: var(--black); }
+    .card.blue-card { background: var(--blue); color: var(--black); }
+    .card.yellow-card { background: var(--yellow); color: var(--black); }
+    .card.black-card { background: var(--black); color: var(--white); }
+    .card.white-card { background: var(--white); color: var(--black); }
+    .card-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 5px 12px; border-radius: 100px; border: 2px solid currentColor; width: fit-content; }
+    .card.pink-card .card-badge { border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.9); }
+    .card.black-card .card-badge { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); }
+    .card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+    .card.big h3 { font-size: 26px; }
+    .card-body { font-size: 14px; line-height: 1.7; opacity: 0.85; }
+    .card-take { margin-top: auto; padding-top: 14px; border-top: 2px solid currentColor; font-size: 12px; font-weight: 600; opacity: 0.7; }
+    .card.pink-card .card-take { border-color: rgba(255,255,255,0.3); }
+    .card.black-card .card-take { border-color: rgba(255,255,255,0.2); }
+    .card-take strong { opacity: 1; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 4px; }
+    .card-big-emoji { position: absolute; right: -10px; bottom: -10px; font-size: 80px; opacity: 0.1; line-height: 1; pointer-events: none; }
+    .status-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+    .status-tag { background: var(--black); color: var(--white); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; padding: 3px 10px; border-radius: 4px; }
+    .status-tag.hot { background: var(--pink); color: var(--white); }
+    .status-tag.new-tag { background: var(--lime); color: var(--black); }
+    .status-tag.rip { background: #333; color: #aaa; }
+    .status-tag.spicy { background: #ff4400; color: white; }
+    .divider { height: 4px; background: repeating-linear-gradient(90deg, var(--black) 0px, var(--black) 20px, var(--white) 20px, var(--white) 24px); margin: 48px 0; }
+    footer { background: var(--black); color: var(--white); text-align: center; padding: 48px 40px; margin-top: 60px; }
+    .footer-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 40px; font-weight: 800; background: linear-gradient(90deg, var(--pink), var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .footer-sub { color: rgba(255,255,255,0.5); font-size: 14px; margin-top: 8px; }
+    .footer-sub span { color: var(--pink); }
+    @media (max-width: 768px) { main { padding: 20px; } header { padding: 32px 20px 24px; } .tea-bar { padding: 16px 20px; } .bento-2, .bento-3 { grid-template-columns: 1fr; } .card { border-radius: 14px; padding: 20px; } }
   </style>
 </head>
 <body>
-  <header>
-    <div class="eyebrow">Pop Culture Intelligence</div>
-    <h1>Mandy <em>Intel</em></h1>
-    <div class="for-mandy">For Mandy</div>
-    <div class="header-tagline">Pop Culture. No Filter.</div>
-    <div class="header-meta">
-      <span>Tuesday, March 3, 2026</span>
-      <span>Issue No. 2</span>
-      <span>Powered by Wally</span>
-    </div>
-  </header>
 
-  <div class="week-banner">Tuesday intel drop &mdash; because keeping up is a full-time job and we do it better than everyone else</div>
+<div class="ticker-wrap">
+  <span class="ticker-content">
+    <span class="ticker-item">&#128293; Zendaya's stylist spilled she secretly MARRIED Tom Holland?!</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#128148; RIP McSteamy &#8212; Eric Dane passes at 52 from ALS</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#128081; Kim K + Lewis Hamilton couple mode in Arizona fr</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#129318; Bill Clinton grilled about Epstein: "I don't know"</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#128141; Did Zendaya already have the wedding and we missed it?!</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#128557; BAFTA host Alan Cumming apologizes for "trauma-triggering" ceremony</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#128128; Stalker arrested outside Jake Webber LA home</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#128081; Prince William's Royal modernization era is officially HERE</span>
+  </span>
+</div>
 
-  <div class="zone-summary">
-    <div class="summary-label">Today at a glance</div>
-    <ul class="summary-list">
-      <li><strong>Life Events:</strong> Eric Dane &mdash; McSteamy himself &mdash; died of ALS at 53. His wife Rebecca Gayheart had withdrawn their divorce filing after his diagnosis. He left behind two daughters. Genuinely heartbreaking.</li>
-      <li><strong>Reality TV:</strong> RHONY Season 16 cast is OUT &mdash; Sai, Jessel, and Erin Lichy are back, Carole Radziwill is returning after years away, and fresh faces are incoming. Also: The Traitors S4 winner was Rob Rausch, who went completely solo and blindsided Maura Higgins and the entire room.</li>
-      <li><strong>Who's Dating Who:</strong> Cardi B went completely OFF on Stefon Diggs at a live concert post-breakup. Shia LaBeouf is navigating a Mardi Gras arrest on top of the Mia Goth split. Paige DeSorbo is quietly and gracefully moving on from Craig.</li>
-      <li><strong>The Dirt:</strong> Epstein "Walk of Shame" stickers are appearing near the Hollywood Walk of Fame naming powerful people. Bill Clinton confirms Trump told him he had "some great times" with Epstein. A newly released photo shows Stephen Hawking at one of Epstein's events.</li>
-      <li><strong>World Drama:</strong> US-Iran conflict is escalating &mdash; B-2 stealth bombers hit Iranian nuclear infrastructure, Iran struck an oil tanker off Oman killing an Indian crew member. Lebanon, Iraq, and Cyprus are now involved. This is the regional war everyone feared was coming.</li>
-    </ul>
+<header>
+  <div class="header-eyebrow">&#10024; your daily intel drop</div>
+  <div class="header-title">MANDY INTEL</div>
+  <div class="header-sub">your daily tea <span>&#9749;</span> no filter bestie</div>
+  <div class="header-meta">
+    <div class="meta-pill">Tuesday Mar 3, 2026</div>
+    <div class="meta-pill">Issue No. 3</div>
+    <div class="meta-pill">For Mandy &#128150;</div>
+  </div>
+</header>
+
+<div class="tea-bar">
+  <div class="tea-label">&#9749; today's tea &#8212; no cap edition</div>
+  <div class="tea-items">
+    <div class="tea-item">&#128141; Zendaya married?!</div>
+    <div class="tea-item">&#128148; Eric Dane gone</div>
+    <div class="tea-item">&#128081; Kim K era</div>
+    <div class="tea-item">&#129318; Clinton + Epstein</div>
+    <div class="tea-item">&#128081; Royal rebrand</div>
+    <div class="tea-item">&#128557; BAFTA chaos</div>
+  </div>
+</div>
+
+<main>
+
+  <div class="section-header">
+    <span class="section-emoji">&#128158;</span>
+    <span class="section-title">Dating Era</span>
+    <div class="section-rule"></div>
+    <span class="section-vibe">it's giving... situationship to marriage pipeline</span>
   </div>
 
-  <!-- ROYAL WATCH -->
-  <div class="zone zone-royals">
-    <div class="zone-head"><div class="zone-label">&#128081; Royal Watch</div><div class="zone-desc">William &middot; Kate &middot; Harry &mdash; the brothers, the institution, the drama</div><div class="zone-rule"></div></div>
-    <div class="cards">
-
-      <a class="card" href="https://www.express.co.uk/news/royal/2026/03/prince-william-modernising-royal-family-plans" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Royal Reform / William's Agenda</div>
-          <h3>William's Plans to Modernise the Royal Family Have Been Revealed &mdash; And the Andrew Chaos Is Exactly What Pushed Him to Finally Act</h3>
-          <div class="card-summary">Prince William has laid out a serious modernisation agenda for the Royal Family, with insiders revealing that the ongoing Prince Andrew/Epstein fallout gave him the political cover he needed to push these changes through. The plans reportedly include slimming the working royal roster, updating how the institution communicates publicly, and drawing cleaner lines between the Firm and family members entangled in scandal. The message from the future king is clear: the next era starts now.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">William has wanted to modernise the monarchy for years but never had the leverage. Andrew's implosion &mdash; combined with Charles's health situation and the ongoing Epstein document drops &mdash; finally gave him a crisis big enough to justify real structural change. This is the future of the British monarchy being written in real time. What William builds now will outlast all of them.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"William's Royal Family modernisation plans are coming out and honestly? The Andrew disaster basically handed him the justification he needed to finally do it. Every cloud etc. The monarchy is about to look very different &mdash; filed under 'the one good thing to come out of this whole mess.'"</div></div>
-        </div>
-        <div class="card-foot"><span>Daily Express</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://realitytea.com/2026/03/harry-william-relationship-worst" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Brothers / Reconciliation Watch</div>
-          <h3>Harry's Reconciliation Signals Are Not Landing &mdash; Sources Say the Brothers Are at an All-Time Low Despite a "Huge Offer" on the Table</h3>
-          <div class="card-summary">Harry has been making what insiders describe as a "huge offer" to William, and a recent diplomatic trip was reportedly meant to send a quiet signal of truce back to the Wales camp. None of it is working. Royal sources are now confirming the Harry-William relationship "couldn't be worse" &mdash; the brothers reportedly not in any meaningful contact. William, post-Kate's cancer remission, has apparently decided to focus entirely on his immediate family and is not prioritising any reconciliation timeline.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Harry is making genuine moves to reach out and William is simply not biting. What's interesting is that Kate getting better &mdash; which you'd think might soften William &mdash; apparently had the opposite effect. He survived the hardest year of his life and emerged more closed off, not more forgiving. Every "they're about to reconcile" headline is wishful thinking. This rift is not closing any time soon.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Harry is apparently making a 'huge offer' to William and sending reconciliation signals and NONE OF IT IS WORKING. Sources say it 'couldn't be worse' between them right now. William healed through Kate's illness and chose unbothered. I respect it even though it's a little devastating."</div></div>
-        </div>
-        <div class="card-foot"><span>RealityTea / Geo News / Mirror</span><span>Mar 3, 2026</span></div>
-      </a>
-
-    </div>
+  <div class="bento bento-3">
+    <a class="card pink-card big" href="https://www.tmz.com/2026/03/03/zendaya-mom-reacts-to-tom-holland-marriage-claims/" target="_blank">
+      <div class="card-big-emoji">&#128141;</div>
+      <div class="status-bar"><span class="status-tag hot">&#128293; TRENDING</span></div>
+      <div class="card-badge">&#128141; Wedding Watch</div>
+      <h3>Zendaya's Stylist Just Casually Announced She's MARRIED to Tom Holland and Her Mom Is Not Denying It</h3>
+      <div class="card-body">Law Roach was on the Actor Awards red carpet and just SAID IT &#8212; "you missed it" &#8212; implying Zendaya and Tom already had their wedding. Then Zendaya's mom Claire reposted the clip captioned "The laugh..." with a laughing emoji and literally zero denial. The internet has been unwell since. No cap, this might actually be real.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> The mom repost with "the laugh" is so sus. If it wasn't true she'd be denying it &#8212; not being cryptic and chaotic about it. They're married bestie. We just weren't invited.</div>
+    </a>
+    <a class="card lime-card" href="https://www.tmz.com/2026/03/03/kim-k-and-lewis-hamilton-share-photos-arizona-getaway/" target="_blank">
+      <div class="card-badge">&#128081; Couple Mode</div>
+      <h3>Kim K + Lewis Hamilton Are FULLY in Their Couple Era and the Arizona Photos Are Giving Everything</h3>
+      <div class="card-body">Kim and Lewis did a whole romantic Lake Powell getaway &#8212; matching scenery shots, zero thirst trap energy, and Lewis's shirtless jog video. This is the most low-key Kim has ever been about anything and honestly? Growth.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Lewis said "I'm not playing games with this one" and Kim is eating it up. Different energy than we've ever seen from her. Rooting for them tbh.</div>
+    </a>
+    <a class="card yellow-card" href="https://www.tmz.com/2026/03/03/camila-cabello-birthday-sexiest-shots/" target="_blank">
+      <div class="card-badge">&#127874; Birthday Szn</div>
+      <h3>Camila Cabello Turned 29 and Reminded Everyone She's Still That Girl</h3>
+      <div class="card-body">Happy birthday to Camila! She's 29, unbothered, and glowing. Went through the whole Shawn-to-Austin era and came out the other side looking incredible. Se&#241;orita forever.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> She's in her comeback-girl era and it's working. The black bikini slay tradition continues.</div>
+    </a>
   </div>
 
-  <!-- REALITY TV -->
-  <div class="zone zone-reality">
-    <div class="zone-head"><div class="zone-label">&#128250; Reality TV</div><div class="zone-desc">RHONY &middot; The Traitors &middot; Below Deck &middot; Love After Lockup</div><div class="zone-rule"></div></div>
-    <div class="cards">
+  <div class="divider"></div>
 
-      <a class="card" href="https://www.bravotv.com/the-real-housewives-of-new-york-city/season-16/cast" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">RHONY Season 16 / Cast Reveal</div>
-          <h3>RHONY Season 16 Cast Is Out &mdash; Sai, Jessel, and Erin Lichy Return, Carole Radziwill Is Back After Years Away, Plus New Faces</h3>
-          <div class="card-summary">Bravo just dropped the Real Housewives of New York City Season 16 cast and it is a mix of fan favorites and fresh blood. Sai De Silva, Jessel Taank, and Erin Lichy are all returning. The real headline: Carole Radziwill &mdash; original RHONY royalty, journalist, widow of JFK Jr.'s cousin, and one of the best confessional-givers in franchise history &mdash; is coming back after years away. New cast members are joining the table for the first time. The group chat has been activated.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Carole Radziwill coming back to RHONY is genuinely significant &mdash; she left on difficult terms and has been publicly clear about not wanting to return. The fact that she's back signals either a massive payday, compelling drama, or both. Her dry wit and sharp commentary next to the newer cast is going to be excellent television. New York is having a moment again.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"RHONY S16 cast is OUT and CAROLE RADZIWILL IS BACK?? She swore she was done with this show!! Plus Sai, Jessel, Erin all returning with new cast members. New York is about to deliver something special and I am setting my calendar reminders right now."</div></div>
-        </div>
-        <div class="card-foot"><span>Bravo / E! / US Weekly</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://decider.com/2026/03/traitors-season-4-winner-rob-rausch" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">The Traitors S4 / Winner</div>
-          <h3>The Traitors Season 4 Winner Is Rob Rausch &mdash; He Went Solo, Blindsided Maura Higgins, and Voted Out Eric Nam in the Most Ruthless Finale</h3>
-          <div class="card-summary">Rob Rausch has won The Traitors Season 4 after one of the most cutthroat finales the show has produced. He entered the finale as the last remaining Traitor, successfully blindsided Maura Higgins &mdash; who had absolutely no idea he was a Traitor until the reveal &mdash; and voted out Eric Nam to claim the entire prize solo. No splitting. No mercy. No hesitation. Maura's face at the moment of reveal was television gold. Rob played a near-flawless game from wire to wire.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Winning The Traitors solo &mdash; last Traitor standing in a room full of increasingly suspicious Faithfuls &mdash; requires either flawless strategy or supernatural nerve. Rob had both. Maura Higgins being the one left holding the bag at the end is especially dramatic because she went into the finale so confident. This is one of the best Traitors seasons the franchise has delivered.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"ROB RAUSCH WON THE TRAITORS SEASON 4 AND HE WENT COMPLETELY SOLO!!! Blindsided Maura, voted out Eric Nam, kept his face absolutely straight the entire time. This finale was unhinged in the absolute best way. We need to debrief immediately."</div></div>
-        </div>
-        <div class="card-foot"><span>Decider / Peacock</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://tvinsider.com/2026/03/traitors-season-5-details" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">The Traitors S5 / Already Teasing</div>
-          <h3>Traitors Season 5 Details Are Already Being Hinted At &mdash; A New Casting Direction and a Potential Game Format Twist</h3>
-          <div class="card-summary">The S4 finale barely cooled down before TV Insider started reporting on Traitors Season 5 details being teased by producers. Early hints include a new casting direction &mdash; leaning into a specific mix of celebrity profiles that performed well this season &mdash; plus word of a potential new twist to the game format that would fundamentally change how Traitors are recruited and identified. Production reportedly starts this summer. They're not letting the momentum die.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">The Traitors is at peak cultural relevance right now &mdash; the rare reality show that gets genuinely smarter and more compelling every season. A twist to the recruitment format could completely upend the strategy everyone has been building toward. If Season 4 gave us Rob Rausch's solo masterclass, imagine what they'll construct for Season 5 to top it.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"They are already teasing Traitors Season 5 and apparently there's a new format twist coming?? I do not know how they keep making this show better every season but here we are. Dream cast, go &mdash; who do you want to see in the castle?"</div></div>
-        </div>
-        <div class="card-foot"><span>TV Insider</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://decider.com/2026/03/below-deck-down-under-daisy-kelliher-chef-ben-robinson" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Below Deck Down Under / Galley War</div>
-          <h3>Daisy Kelliher vs. Chef Ben Robinson Is the Below Deck Clash We Did Not Know We Needed &mdash; Full Galley Meltdown on Camera</h3>
-          <div class="card-summary">Below Deck Down Under served up one of the most entertaining chief-stew-vs-chef confrontations in franchise history this week. Daisy Kelliher and Chef Ben Robinson's simmering tension boiled over into a full galley meltdown that production cameras caught in its entirety. Both are Below Deck legends &mdash; Daisy from Down Under, Ben from the original series &mdash; which makes this feel like a crossover event where two equally strong personalities refused to yield an inch of territory. Egos, boats, food, and chaos. Perfect television.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Daisy Kelliher is one of the most beloved chief stews in Below Deck history and Ben Robinson has been doing this since the early original seasons &mdash; neither backs down easily. Two franchise veterans in a confined galley with cameras rolling is the exact recipe the Below Deck formula was built for. This episode is getting clipped and shared everywhere right now.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Daisy Kelliher and Chef Ben Robinson had a FULL galley meltdown on Below Deck Down Under and I need you to find the clips today. Two Below Deck legends absolutely losing it at each other on a boat. This is why we watch this franchise."</div></div>
-        </div>
-        <div class="card-foot"><span>Decider / Bravo</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://wetpaint.com/love-after-lockup-season-7-streaming-now" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Love After Lockup / Season 7</div>
-          <h3>Love After Lockup Season 7 Is Streaming Now &mdash; New Couples, New Chaos, and Zero Chill As Always</h3>
-          <div class="card-summary">Love After Lockup Season 7 has dropped and is streaming now, bringing a fresh batch of couples navigating the very specific challenge of transitioning from a prison relationship to real-world life together. If you've never watched: it is one of the most unexpectedly compelling reality franchises on television &mdash; genuine emotional stakes wrapped around situations unlike anything else on TV. Season 7 reportedly has standout couples already generating early conversation online.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Love After Lockup is on Season 7 because it somehow keeps finding people with genuinely compelling stories. It manages to be both chaotic and deeply human at the same time, which is a very hard thing to pull off. If you've been sleeping on this franchise, this is actually a solid entry point. New season, fresh stories.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Love After Lockup Season 7 is streaming RIGHT NOW and I need a watch party. This show should not work as well as it does and yet here we are on Season 7. New couples, real drama, deeply weird in the most human way. Who's in?"</div></div>
-        </div>
-        <div class="card-foot"><span>WE tv</span><span>Mar 3, 2026</span></div>
-      </a>
-
-    </div>
+  <div class="section-header">
+    <span class="section-emoji">&#128148;</span>
+    <span class="section-title">Life Events</span>
+    <div class="section-rule"></div>
+    <span class="section-vibe">the ones that hit different</span>
   </div>
 
-  <!-- LIFE EVENTS -->
-  <div class="zone zone-life">
-    <div class="zone-head"><div class="zone-label">&#127801; Life Events</div><div class="zone-desc">Grief &middot; Legacy &middot; The ones we lost</div><div class="zone-rule"></div></div>
-    <div class="cards">
-
-      <a class="card" href="https://people.com/eric-dane-cause-of-death-als-confirmed" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">In Memoriam / Eric Dane</div>
-          <h3>Eric Dane's Cause of Death Confirmed: ALS. Grey's Anatomy's McSteamy Was 53 Years Old. He Left Behind Two Daughters.</h3>
-          <div class="card-summary">The cause of death for Eric Dane &mdash; beloved for his iconic role as Dr. Mark Sloan "McSteamy" on Grey's Anatomy &mdash; has been officially confirmed as ALS, the progressive neurodegenerative disease. He was 53. Dane is survived by his two daughters, Billie and Georgia. The loss is hitting the Grey's Anatomy community and his fans deeply &mdash; he was a genuine warmth on screen and known as a kind, funny person off it. McSteamy was one of the show's great characters. Fifty-three is devastatingly young.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Grey's Anatomy defined television drama for an entire generation and McSteamy was central to what made that era so beloved. Eric Dane himself was by all accounts genuinely warm and funny &mdash; the kind of person people always described as "exactly what you'd hope." 53 is so young. ALS is so brutal. His daughters are still little. This one is sitting heavy.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Eric Dane's cause of death has been confirmed as ALS. McSteamy. 53 years old. Two daughters. Grey's Anatomy gave us so much and he was such a huge part of that whole era of TV. Genuinely heartbreaking. Rest easy."</div></div>
-        </div>
-        <div class="card-foot"><span>People / TMZ</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://pagesix.com/2026/03/rebecca-gayheart-withdrew-divorce-eric-dane-als" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Love in the Hardest Place / Rebecca Gayheart</div>
-          <h3>Rebecca Gayheart Had Withdrawn Her Divorce Filing After Eric Dane's ALS Diagnosis &mdash; She Stayed With Him Until the End</h3>
-          <div class="card-summary">Before Eric Dane's death, his wife Rebecca Gayheart &mdash; actress and his partner of many years &mdash; had filed for divorce. When he was diagnosed with ALS, she withdrew the filing and stayed by his side through his entire illness. The couple, together for over 15 years and sharing two daughters, ended their story not in a courtroom but with her choosing to be present through his final chapter. It is a quiet act of love that is resurfacing in the wake of the confirmed cause of death.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Relationships are complicated and real life is messier than tabloid headlines. Rebecca withdrew a divorce to stay with a man she had been pulling away from &mdash; and stayed through the most difficult thing two people can face together. Whatever their private story was, that choice says something real. Their daughters got to have their father cared for. That matters an enormous amount.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Rebecca Gayheart had already filed for divorce but when Eric got diagnosed with ALS she withdrew it and stayed with him until the end. Their daughters had both parents there for it. I am genuinely not okay today. Whatever was complicated &mdash; she showed up when it counted."</div></div>
-        </div>
-        <div class="card-foot"><span>Page Six / People</span><span>Mar 3, 2026</span></div>
-      </a>
-
-    </div>
+  <div class="bento bento-2">
+    <a class="card black-card big" href="https://en.wikipedia.org/wiki/Eric_Dane" target="_blank">
+      <div class="card-big-emoji">&#129658;</div>
+      <div class="status-bar"><span class="status-tag rip">&#128148; RIP</span></div>
+      <div class="card-badge">&#128148; In Memoriam</div>
+      <h3>Eric Dane &#8212; McSteamy &#8212; Passes Away at 52 After Battle With ALS</h3>
+      <div class="card-body">Eric Dane, who was literally McSteamy on Grey's Anatomy (the hottest character on television for a decade), has passed from ALS. He was 52. His wife Rebecca Gayheart withdrew their divorce filing after his diagnosis and they spent his final time together. He leaves behind two daughters. This one genuinely hurts.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Grey's Anatomy defined a generation and McSteamy was peak TV. Rebecca coming back when things got hard says everything. Rest easy. He was iconic no cap.</div>
+    </a>
+    <a class="card white-card" href="https://www.tmz.com/2026/03/03/american-idol-alum-caleb-flynn-new-bodycam-footage/" target="_blank">
+      <div class="status-bar"><span class="status-tag spicy">&#128562; developing</span></div>
+      <div class="card-badge">&#128682; Crime Watch</div>
+      <h3>American Idol Alum Caleb Flynn Bodycam: "Is She Gone?" &#8212; New Footage Released</h3>
+      <div class="card-body">Body cam footage was released from the night Flynn's wife was allegedly shot by a burglar. He's seen outside sobbing, asking an officer repeatedly "Is she gone? Oh my God." Investigation still ongoing. The footage is a lot.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> There's a lot more to this story. Not speculating &#8212; just noting the investigation is active and this footage is genuinely difficult to watch.</div>
+    </a>
   </div>
 
-  <!-- WHO'S DATING WHO -->
-  <div class="zone zone-dating">
-    <div class="zone-head"><div class="zone-label">&#128139; Who's Dating Who</div><div class="zone-desc">Breakups &middot; New couples &middot; Calling people out on stage</div><div class="zone-rule"></div></div>
-    <div class="cards">
+  <div class="divider"></div>
 
-      <a class="card" href="https://pagesix.com/2026/03/cardi-b-concert-rant-stefon-diggs-breakup" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Breakup Mode / Cardi B</div>
-          <h3>Cardi B Absolutely Eviscerated Stefon Diggs at a Live Concert Post-Breakup &mdash; The Crowd Was Living for Every Single Word</h3>
-          <div class="card-summary">Cardi B took the stage and turned it into a full public reckoning with her ex Stefon Diggs, going in hard on the NFL wide receiver in front of a packed crowd that absolutely ate up every word. She did not hold back &mdash; names, specifics, the full thing. Cardi has never been known for keeping breakup feelings private and this concert rant is already being cut into clips that are dominating social media. Stefon Diggs is having a very rough week by any measure.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Cardi B on stage after a breakup is a specific kind of unfiltered chaos that genuinely cannot be replicated. She does not have an internal monologue filter and live performances remove whatever guardrail was left. Whatever Stefon Diggs did, she felt strongly enough to broadcast it to thousands of people in real time. The clips are everywhere and they are objectively iconic.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Cardi B went COMPLETELY OFF about Stefon Diggs at a concert and I need you to find the clips immediately. She fully named him. In front of everyone. The crowd was SCREAMING. Never change Cardi. Literally never change."</div></div>
-        </div>
-        <div class="card-foot"><span>Page Six</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://www.eonline.com/news/shia-labeouf-mia-goth-breakup-mardi-gras-arrest-2026" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Breakup + Arrest / Shia LaBeouf</div>
-          <h3>Shia LaBeouf Opens Up About the Mia Goth Split &mdash; While Also Addressing His Mardi Gras Arrest Because Naturally</h3>
-          <div class="card-summary">Shia LaBeouf is opening up &mdash; characteristically intense and unfiltered &mdash; about both his split from Mia Goth and the Mardi Gras arrest that happened in the middle of it all. The two are being discussed in the same breath right now and the picture it paints is a lot. Mia Goth, for her part, has been photographed looking extraordinary and utterly unbothered. The contrast between where each of them is right now is doing all the necessary storytelling on its own.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Shia LaBeouf is one of those celebrity situations where you genuinely cannot look away because something is always happening. A Mardi Gras arrest on top of a high-profile split is peak Shia. And Mia is genuinely one of the most interesting and compelling actors working right now &mdash; her post-breakup chapter is going to be fascinating to watch unfold.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Shia LaBeouf is talking about his Mia Goth breakup AND his Mardi Gras arrest in the same news cycle and honestly I respect the chaotic transparency. Meanwhile Mia is out here glowing and flourishing. She won the breakup so decisively it's not even a competition."</div></div>
-        </div>
-        <div class="card-foot"><span>E! News</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://www.bravotv.com/summer-house/paige-desorbo-new-relationship-craig-conover" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Moving On / Paige DeSorbo</div>
-          <h3>Paige DeSorbo Is Opening Up About Her New Relationship &mdash; And She Seems Genuinely, Quietly Very Good After the Craig Split</h3>
-          <div class="card-summary">Summer House's Paige DeSorbo is sharing details about the new relationship she has been quietly building since her high-profile split from Craig Conover. She is characteristically stylish and self-assured about the whole thing &mdash; no dramatic confessionals, just someone who clearly did the work and came out the other side knowing exactly what she wanted. Details on the new guy are emerging and the vibe is very solidly "upgrade."</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Paige and Craig were one of the Bravo universe's most invested-in couples &mdash; years of will-they-won't-they across two franchises. Watching her clearly thriving post-breakup is the kind of redemption arc that feels genuinely good rather than manufactured. She doesn't owe anyone drama and the fact that she seems truly at peace makes this more interesting, not less.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Paige DeSorbo is talking about her new relationship post-Craig and she seems GENUINELY happy &mdash; not performatively happy, like actually at peace. She came out of that whole situation with her whole self intact. This is the Paige era and it looks good on her."</div></div>
-        </div>
-        <div class="card-foot"><span>Bravo / E!</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://www.instagram.com/jessvalortiz/" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Creator Drama / Jess Val Ortiz</div>
-          <h3>Jess Val Ortiz (11M Followers) Is Calling the Post-Alexei Mitchell Breakup Period "Tumultuous" &mdash; Her Audience Is Very Online About It</h3>
-          <div class="card-summary">Jess Val Ortiz &mdash; content creator with 11 million followers across platforms &mdash; is getting candid about the fallout from her split with Alexei Mitchell, describing the time after as "tumultuous." For the uninitiated: Jess and Alexei were a significant creator couple whose breakup sent their respective communities into full forensic investigation mode. Her honesty about the difficulty of the aftermath is more real than the standard "I'm fine, actually thriving!" creator breakup post, and her audience is responding to it intensely.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Creator breakups hit differently because the audience feels like they were in the relationship too &mdash; years of vlogs, couple content, shared inside jokes. Jess admitting things were turbulent rather than spinning a "thriving era" narrative is the kind of honesty that builds real trust. Also: 11 million people are watching this story unfold in real time, which is its own kind of pressure.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Jess Val Ortiz is finally being real about the Alexei breakup aftermath and calling it 'tumultuous' &mdash; finally some actual honesty instead of the fake thriving content!! 11 million people watching this unfold. Are you following her story?"</div></div>
-        </div>
-        <div class="card-foot"><span>Instagram / Social</span><span>Mar 3, 2026</span></div>
-      </a>
-
-    </div>
+  <div class="section-header">
+    <span class="section-emoji">&#129318;</span>
+    <span class="section-title">The Dirt</span>
+    <div class="section-rule"></div>
+    <span class="section-vibe">lowkey the most important section</span>
   </div>
 
-  <!-- THE DIRT -->
-  <div class="zone zone-dirt">
-    <div class="zone-head"><div class="zone-label">&#129656; The Dirt</div><div class="zone-desc">Epstein &middot; Scandals &middot; Power being held accountable</div><div class="zone-rule"></div></div>
-    <div class="cards">
-
-      <a class="card" href="https://pagesix.com/2026/03/epstein-walk-of-shame-stickers-hollywood-walk-of-fame" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Epstein / Hollywood Walk of Shame</div>
-          <h3>"Walk of Shame" Stickers Naming Epstein's Powerful Friends Are Appearing Near the Hollywood Walk of Fame &mdash; Nobody Is Tearing Them Down</h3>
-          <div class="card-summary">An anonymous street art campaign has placed "Walk of Shame" stickers near the Hollywood Walk of Fame, prominently naming celebrities and powerful figures connected to Jeffrey Epstein's network. The stickers are being photographed and shared extensively across social media. What's notable is how long they're surviving removal &mdash; either because taking them down would draw more attention, or because there is genuine public appetite for accountability that nobody wants to be visibly seen opposing right now.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128308; Why this is bigger than it looks</div><div class="block-text">Street art placed near a literal monument to celebrity culture &mdash; naming Epstein's network where tourists photograph stars on the ground &mdash; is pointed, public, and impossible to ignore. The Hollywood Walk of Fame is tourism, television coverage, and cultural memory. Placing accountability there is a deliberate statement. The fact that it's staying up says something about the current moment. Screenshot it before it's gone.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Someone put Epstein 'Walk of Shame' stickers near the Hollywood Walk of Fame naming his powerful friends and THEY ARE JUST STAYING THERE. The cultural accountability moment is fully here and it is not subtle. Find the photos. Screenshot everything."</div></div>
-        </div>
-        <div class="card-foot"><span>Page Six / Social</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://www.theguardian.com/us-news/2026/03/bill-clinton-trump-epstein-great-times" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Epstein / Clinton Says Trump Said</div>
-          <h3>Bill Clinton Says Trump Told Him He Had "Some Great Times" with Jeffrey Epstein &mdash; A Quote That Is Doing Enormous Work Right Now</h3>
-          <div class="card-summary">Bill Clinton has publicly revealed that Donald Trump personally told him he had "some great times" with Jeffrey Epstein &mdash; a statement Clinton is sharing as Epstein document releases continue. The quote is generating enormous attention because it comes from a former president directly attributing it to another former/current president. The mutual-implication dynamic here &mdash; two presidents, one damning quote, no good answer for either of them &mdash; is making this one of the most discussed Epstein disclosures of the week.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128308; Why this is bigger than it looks</div><div class="block-text">Both Clinton and Trump have appeared in Epstein-adjacent reporting and document drops. Clinton quoting Trump saying he had "great times" with Epstein is extraordinary because it is a sitting/former president directly connecting another to this network by his own reported words. This quote will reappear in every political and cultural conversation for the foreseeable future. Nobody comes out of this quote looking good.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Bill Clinton is saying Trump told him he had 'some great times' with Epstein. Directly quoted him. This week in Epstein disclosures is genuinely WILD &mdash; at this point I need a spreadsheet just to keep track of who has said what about whom."</div></div>
-        </div>
-        <div class="card-foot"><span>The Guardian</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://www.thedailybeast.com/epstein-docs-stephen-hawking-photo-emerges" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Epstein Docs / Hawking Photo</div>
-          <h3>Newly Released Epstein Documents Include a Photo of Stephen Hawking at One of His Events &mdash; The Circle Keeps Getting Wider</h3>
-          <div class="card-summary">The latest batch of Epstein document releases has surfaced a photograph of the late physicist Stephen Hawking &mdash; one of the most universally celebrated scientific minds in modern history &mdash; at an event hosted within Epstein's network, surrounded by bikini-clad women. The photo is circulating widely and adding Hawking's name to a list of figures being posthumously connected to the network in ways nobody had publicly documented before. The circle of names in these documents keeps widening with every drop.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128308; Why this is bigger than it looks</div><div class="block-text">Stephen Hawking is a global icon &mdash; one of the most respected scientists who ever lived, a figure of near-universal admiration. His documented presence at Epstein events is genuinely shocking to people who held him in that kind of reverence. This is part of the larger story these documents are telling: Epstein's access was extraordinary, his network was everywhere, and the normalisation was deep and wide. Every drop expands the circle.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"The Epstein documents include a photo of STEPHEN HAWKING at one of his events now and I genuinely cannot keep up with how wide this net keeps getting. Every single week. I'm starting a list. Are you following these document drops?"</div></div>
-        </div>
-        <div class="card-foot"><span>Daily Beast / DOJ Documents</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://www.vanityfair.com/news/2026/03/celebrities-addressing-names-epstein-files" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Epstein / Celebrity Response Watch</div>
-          <h3>Celebrities Are Now Being Asked to Address Their Names in the Epstein Files &mdash; The Responses Range from Panicked to Carefully Calibrated to Total Silence</h3>
-          <div class="card-summary">As Epstein document releases continue, a growing number of celebrities are being put in the position of publicly addressing their names appearing in the files &mdash; through statements, through lawyers, through social media, or through conspicuous silence. The range of responses is itself revealing: some are getting ahead of it with context and explanation, some are issuing tightly-crafted legal denials, and some are simply saying nothing and hoping it passes. It is not passing.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128308; Why this is bigger than it looks</div><div class="block-text">The way someone responds to their name appearing in these documents tells you almost as much as the documents themselves. Panicked denials, calibrated legal statements, and conspicuous silence are all very different postures under the same pressure. Watching public figures navigate this in real time is uncomfortable, fascinating, and genuinely important. The reckoning is not slowing down.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Watching celebrities have to go on record about the Epstein files and the DIFFERENCE between how each one responds is telling a whole story of its own. Some got lawyers. Some went fully silent. Some are explaining. It's a stress test for every PR team in Hollywood."</div></div>
-        </div>
-        <div class="card-foot"><span>Vanity Fair / Various</span><span>Mar 3, 2026</span></div>
-      </a>
-
-    </div>
+  <div class="bento bento-2">
+    <a class="card black-card" href="https://www.tmz.com/2026/03/03/bill-clinton-asked-about-jeffrey-epstein-suicide/" target="_blank">
+      <div class="card-big-emoji">&#129318;</div>
+      <div class="status-bar"><span class="status-tag hot">&#128293; BIG DEAL</span></div>
+      <div class="card-badge">&#128064; Epstein Watch</div>
+      <h3>Bill Clinton Grilled About Epstein in Front of Congress and His Answer Was... Interesting</h3>
+      <div class="card-body">Clinton testified before the House Oversight Committee. Lauren Boebert asked point blank: was Epstein suicidal? His answer: "I don't know. I only know what the medical finding was. I've accepted it in my own mind." He cannot say "yes he killed himself" with any confidence. The whole thing was tense and weird.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> "I've accepted it in my own mind" is the most politician non-answer in history. That is NOT a yes. The Epstein discourse never ends and this hearing is not helping.</div>
+    </a>
+    <a class="card yellow-card" href="https://www.tmz.com/2026/03/03/woman-arrested-at-jake-webbers-house/" target="_blank">
+      <div class="card-badge">&#128680; Celeb Safety</div>
+      <h3>Stalker Arrested Outside Jake Webber's LA Home After Midnight Break-In Attempt</h3>
+      <div class="card-body">A woman showed up at midnight and tried to open Jake Webber's front door. He called the cops, she was arrested for trespassing. Third major content-creator stalker incident this year. The parasocial-to-trespassing pipeline is getting scary.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Glad he called the police immediately. Being famous and hyper-accessible online is genuinely complicated and dangerous. Stay safe out there.</div>
+    </a>
   </div>
 
-  <!-- WORLD DRAMA -->
-  <div class="zone zone-world">
-    <div class="zone-head"><div class="zone-label">&#127757; World Drama</div><div class="zone-desc">When the news is too big to scroll past</div><div class="zone-rule"></div></div>
-    <div class="cards">
+  <div class="divider"></div>
 
-      <a class="card" href="https://www.theguardian.com/world/2026/mar/us-iran-b2-stealth-bombers-nuclear-infrastructure" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">US-Iran War / B-2 Bombers Strike</div>
-          <h3>B-2 Stealth Bombers Hit Iranian Nuclear Infrastructure &mdash; The Regional War Many Countries Had Long Feared Has Arrived</h3>
-          <div class="card-summary">The United States has deployed B-2 stealth bombers to strike Iranian nuclear infrastructure in a significant escalation of the conflict that has been building through 2025. The strikes are being described across major outlets as a "historic rupture" and "the regional war many countries had long feared" &mdash; with Lebanon, Iraq, and Cyprus now pulled into the conflict as Iran activates its regional network in response. The Guardian, NYT, and Al Jazeera are all reporting this as one of the most consequential geopolitical moments in a generation.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">B-2 stealth bombers are not deployed casually &mdash; they are nuclear-capable strategic assets built for exactly this kind of heavily defended, high-value target. Hitting Iranian nuclear infrastructure with B-2s is a message that cannot be walked back. Lebanon, Iraq, and Cyprus now being involved means this is a genuine regional conflict with no visible exit ramp. This is not background noise. Put on the news tonight.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"The US sent B-2 STEALTH BOMBERS to hit Iranian nuclear sites and now Lebanon, Iraq, and Cyprus are all getting pulled in too. Every major outlet is calling it 'the regional war many countries had long feared.' Please be watching the news today. Check on your people."</div></div>
-        </div>
-        <div class="card-foot"><span>Guardian / NYT / Al Jazeera</span><span>Mar 3, 2026</span></div>
-      </a>
-
-      <a class="card" href="https://www.aljazeera.com/news/2026/3/iran-strikes-oil-tanker-oman-indian-crew-member-killed" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">Iran Retaliates / Oman Oil Tanker</div>
-          <h3>Iran Struck an Oil Tanker off the Coast of Oman &mdash; An Indian Crew Member Was Killed in the Attack</h3>
-          <div class="card-summary">Iran has retaliated by striking a commercial oil tanker in the Gulf of Oman, killing at least one Indian crew member in the attack. Targeting commercial shipping &mdash; in one of the world's most critical maritime corridors &mdash; signals that Iran is willing to extend the conflict beyond military-to-military engagement into global commerce. This follows Iran's longer pattern of maritime pressure and makes clear that the Gulf region is now a live conflict zone for all shipping traffic passing through.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">When wars hit oil tankers in the Gulf of Oman, everyone eventually feels it &mdash; fuel prices, supply chains, shipping insurance, global markets. An Indian crew member being killed brings India into the picture in a real and direct way. The conflict is now spreading from military targets into the commercial infrastructure that keeps the world running. The economic ripple effects are already beginning.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Iran hit an oil tanker in the Gulf of Oman and killed a crew member as retaliation &mdash; commercial shipping in one of the world's busiest maritime corridors is now in active danger. This conflict is spreading well past military targets. Gas prices are about to become a conversation."</div></div>
-        </div>
-        <div class="card-foot"><span>Al Jazeera / Reuters</span><span>Mar 3, 2026</span></div>
-      </a>
-
-    </div>
+  <div class="section-header">
+    <span class="section-emoji">&#128081;</span>
+    <span class="section-title">Royal Watch</span>
+    <div class="section-rule"></div>
+    <span class="section-vibe">the monarchy said "it's giving rebrand"</span>
   </div>
 
-  <!-- STREAMING & SHOWS -->
-  <div class="zone zone-tv">
-    <div class="zone-head"><div class="zone-label">&#127916; Streaming &amp; Shows</div><div class="zone-desc">March watchlist &middot; What's new &middot; What's hot</div><div class="zone-rule"></div></div>
-    <div class="cards">
-
-      <a class="card" href="https://www.netflix.com/title/peaky-blinders-movie" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">March 2026 / Must-Watch Lineup</div>
-          <h3>March 2026 Is Stacked: Peaky Blinders Movie on Netflix, Taylor Sheridan's "The Madison," Scarpetta on Prime, and the Beef Follow-Up</h3>
-          <div class="card-summary">March 2026 is one of the strongest single-month streaming lineups in recent memory. The Peaky Blinders movie is finally arriving on Netflix &mdash; the long-awaited big-screen send-off for Tommy Shelby that the fandom has been waiting years for. Taylor Sheridan's "The Madison" drops on Paramount+, expanding the Yellowstone universe further. Patricia Cornwell's iconic Kay Scarpetta gets her own series on Prime Video. And Netflix's Beef follow-up &mdash; from the same team behind one of 2023's most acclaimed limited series &mdash; is incoming. Update your watchlist now.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">Peaky Blinders ending with a film is a genuine cultural event for anyone who watched that show. Sheridan continues building his prestige TV empire. Scarpetta has a devoted multi-generational book fandom that has been waiting for this adaptation for decades. And if the Beef follow-up matches the original, it's going to be an immediate awards-season conversation. You have a lot of watching to do this month.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"March streaming schedule is INSANE: Peaky Blinders movie on Netflix, new Taylor Sheridan show on Paramount, Scarpetta on Prime, AND the Beef follow-up on Netflix too. I genuinely need more hours in the day. Which one are you watching first??"</div></div>
-        </div>
-        <div class="card-foot"><span>Netflix / Paramount+ / Prime Video</span><span>Mar 2026</span></div>
-      </a>
-
-      <a class="card" href="https://www.max.com/shows/the-pitt" target="_blank">
-        <div class="card-body">
-          <div class="card-tag">HBO Max / Still Running Hot</div>
-          <h3>The Pitt Is Still the Hottest Medical Drama on Television &mdash; HBO Max's Breakout Hit Is Exactly as Good as Everyone Is Saying</h3>
-          <div class="card-summary">The Pitt &mdash; HBO Max's intense, real-time Pittsburgh emergency room drama &mdash; is still dominating the conversation weeks into its run. Each episode covers exactly one hour of real time in a trauma ER, creating a pressure-cooker tension unlike most procedurals. Word of mouth has turned it into one of HBO Max's genuine breakout hits of early 2026. If you've been waiting for the right time to start: the full season is there, it is exactly as good as everyone is saying, and this weekend is your moment.</div>
-        </div>
-        <div class="card-blocks">
-          <div class="block block-means"><div class="block-label">&#128161; Why you care</div><div class="block-text">The Pitt scratches the itch that ER used to scratch &mdash; intense, character-driven, medically grounded &mdash; but with contemporary production quality and the real-time format that makes every episode a contained event. It's the kind of show that people stop recommending and start insisting on. If your friends are talking about it and you haven't started yet, that changes this weekend.</div></div>
-          <div class="block block-takeaway"><div class="block-label">&#9989; Send this to your group chat</div><div class="block-text">"Please tell me you've started The Pitt on HBO Max because people will NOT stop talking about it and for very good reason. The real-time ER format is so stressful in the absolute best way. Block your Saturday, start from episode one. You will not regret it."</div></div>
-        </div>
-        <div class="card-foot"><span>HBO Max</span><span>Mar 2026</span></div>
-      </a>
-
-    </div>
+  <div class="bento bento-2">
+    <a class="card blue-card" href="https://www.express.co.uk/news/royal/2026/03/prince-william-modernising-royal-family" target="_blank">
+      <div class="card-badge">&#10024; ERA</div>
+      <h3>William's Royal Modernization Plans Are Out and He's Not Playing &#8212; Andrew Was the Wake-Up Call</h3>
+      <div class="card-body">Prince William laid out plans to slim down and modernize the Firm. The Andrew/Epstein implosion gave him the political cover he needed to push it through. Smaller working roster, updated comms, cleaner lines between The Firm and scandal-adjacent family members. The William era starts now.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> William has been waiting for leverage for years. Andrew handed it to him. Sometimes the scandal is the catalyst. Monarchy rebrand arc is very real.</div>
+    </a>
+    <a class="card white-card" href="https://www.realitytea.com" target="_blank">
+      <div class="card-badge">&#128128; EXPIRED</div>
+      <h3>Harry's Big Reconciliation Offer Is Not Landing &#8212; Brothers at "All-Time Low"</h3>
+      <div class="card-body">Harry's major offer to William is reportedly getting nowhere. Sources say the brothers are at an all-time low. William &#8212; focused on Kate and the kids post-cancer remission &#8212; is not prioritizing any Harry timeline. The gap is widening.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> William watched his wife fight cancer and came out with a very clear sense of what matters to him. Harry is not currently on that list. This one might not get fixed.</div>
+    </a>
   </div>
 
-  <footer>
-    Mandy Intel &mdash; Pop Culture. No Filter. &mdash; Issue No. 2, March 3, 2026<br/>
-    <span>Made with love and zero restraint by Wally &middot; For Mandy, always</span>
-  </footer>
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <span class="section-emoji">&#128557;</span>
+    <span class="section-title">Culture + Chaos</span>
+    <div class="section-rule"></div>
+    <span class="section-vibe">it's giving... disaster with good intentions</span>
+  </div>
+
+  <div class="bento bento-1">
+    <a class="card pink-card" href="https://www.tmz.com/2026/03/03/alan-cumming-apologizes-after-bafta-racial-slur-moment/" target="_blank">
+      <div class="card-big-emoji">&#127917;</div>
+      <div class="status-bar"><span class="status-tag new-tag">NEW</span></div>
+      <div class="card-badge">&#127916; Awards Drama</div>
+      <h3>BAFTA Host Alan Cumming Calls the Whole Show a "Trauma-Triggering S***show" &#8212; Says What We Were All Thinking</h3>
+      <div class="card-body">Alan Cumming officially spoke out about the BAFTA incident where Tourette's activist John Davidson shouted a slur live on air. He called it a "trauma-triggering s***show," apologized to the Black community, AND threw shade at the BAFTAs and BBC for both broadcasting the slur and censoring free speech. He held multiple perspectives at once which is genuinely impressive. The Tourette's community is also still getting dogpiled and he addressed that too.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> "Trauma-triggering s***show" is now officially an awards ceremony category. The BAFTAs made every wrong call in real time and Cumming just confirmed it publicly. Respect for addressing all sides of it.</div>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-title">MANDY INTEL</div>
+  <div class="footer-sub">curated by pavano &#129302; for mandy <span>&#128150;</span></div>
+  <div class="footer-sub" style="margin-top:8px; font-size:12px;">Tuesday, March 3, 2026 &middot; no cap, no filter &middot; bestie-approved tea</div>
+</footer>
 
 </body>
 </html>
