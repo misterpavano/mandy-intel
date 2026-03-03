@@ -3,40 +3,47 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MANDY INTEL — March 3, 2026</title>
+  <title>MANDY INTEL &#8212; March 3, 2026</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bricolage+Grotesque:wght@400;600;800&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --pink: #FF0080; --lime: #00FF88; --blue: #00D4FF; --yellow: #FFE500; --white: #FAFAFA; --black: #0A0A0A; }
     body { background: var(--white); color: var(--black); font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
     .ticker-wrap { background: var(--black); color: var(--lime); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; overflow: hidden; padding: 10px 0; white-space: nowrap; border-bottom: 3px solid var(--lime); }
-    .ticker-content { display: inline-block; animation: ticker 45s linear infinite; }
+    .ticker-content { display: inline-block; animation: ticker 55s linear infinite; }
     @keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
     .ticker-item { margin-right: 60px; }
     .ticker-sep { color: var(--pink); margin-right: 60px; }
-    header { background: var(--black); padding: 48px 40px 36px; position: relative; overflow: hidden; border-bottom: 4px solid var(--black); }
+    header { background: var(--black); padding: 48px 40px 36px; border-bottom: 4px solid var(--black); }
     .header-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4em; color: var(--lime); margin-bottom: 12px; }
     .header-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(56px, 12vw, 120px); font-weight: 800; line-height: 0.9; background: linear-gradient(90deg, var(--pink) 0%, var(--blue) 60%, var(--lime) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em; }
     .header-sub { font-size: 18px; color: var(--white); margin-top: 14px; font-weight: 500; }
     .header-sub span { color: var(--pink); }
     .header-meta { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
-    .meta-pill { background: transparent; border: 2px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
-    .tea-bar { background: var(--pink); color: var(--white); padding: 20px 40px; border-bottom: 4px solid var(--black); }
-    .tea-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 10px; opacity: 0.8; }
-    .tea-items { display: flex; gap: 12px; flex-wrap: wrap; }
-    .tea-item { background: rgba(0,0,0,0.2); border: 2px solid rgba(255,255,255,0.3); border-radius: 100px; padding: 6px 16px; font-size: 13px; font-weight: 600; }
+    .meta-pill { border: 2px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
+    .glance-bar { background: var(--black); border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 40px 28px; border-bottom: 4px solid var(--lime); }
+    .glance-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.35em; color: var(--lime); margin-bottom: 14px; }
+    .glance-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .glance-list li { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.6; padding-left: 18px; position: relative; }
+    .glance-list li::before { content: '&#8212;'; position: absolute; left: 0; color: var(--pink); }
+    .glance-list li strong { color: var(--white); }
+    .tea-bar { background: var(--pink); color: var(--white); padding: 16px 40px; border-bottom: 4px solid var(--black); }
+    .tea-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 10px; opacity: 0.8; }
+    .tea-items { display: flex; gap: 10px; flex-wrap: wrap; }
+    .tea-item { background: rgba(0,0,0,0.2); border: 2px solid rgba(255,255,255,0.3); border-radius: 100px; padding: 5px 14px; font-size: 12px; font-weight: 600; }
     main { padding: 40px; max-width: 1400px; margin: 0 auto; }
-    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; margin-top: 48px; }
+    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; margin-top: 52px; }
     .section-header:first-child { margin-top: 0; }
-    .section-emoji { font-size: 36px; line-height: 1; }
-    .section-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
-    .section-vibe { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: #666; margin-left: auto; }
-    .section-rule { flex: 1; height: 3px; background: var(--black); margin-left: 8px; }
+    .section-emoji { font-size: 32px; line-height: 1; }
+    .section-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; }
+    .section-vibe { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: #888; margin-left: auto; white-space: nowrap; }
+    .section-rule { flex: 1; height: 3px; background: var(--black); margin-left: 8px; min-width: 20px; }
     .bento { display: grid; gap: 16px; }
     .bento-2 { grid-template-columns: 1fr 1fr; }
     .bento-3 { grid-template-columns: 2fr 1fr 1fr; }
+    .bento-3b { grid-template-columns: 1fr 1fr 1fr; }
     .bento-1 { grid-template-columns: 1fr; }
-    .card { border: 3px solid var(--black); border-radius: 20px; padding: 28px; box-shadow: 5px 5px 0 var(--black); text-decoration: none; color: var(--black); display: flex; flex-direction: column; gap: 14px; transition: transform 0.1s, box-shadow 0.1s; position: relative; overflow: hidden; }
+    .card { border: 3px solid var(--black); border-radius: 20px; padding: 24px; box-shadow: 5px 5px 0 var(--black); text-decoration: none; color: var(--black); display: flex; flex-direction: column; gap: 12px; transition: transform 0.1s, box-shadow 0.1s; position: relative; overflow: hidden; }
     .card:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--black); }
     .card.pink-card { background: var(--pink); color: var(--white); }
     .card.lime-card { background: var(--lime); color: var(--black); }
@@ -44,50 +51,58 @@
     .card.yellow-card { background: var(--yellow); color: var(--black); }
     .card.black-card { background: var(--black); color: var(--white); }
     .card.white-card { background: var(--white); color: var(--black); }
-    .card-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 5px 12px; border-radius: 100px; border: 2px solid currentColor; width: fit-content; }
-    .card.pink-card .card-badge { border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.9); }
-    .card.black-card .card-badge { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); }
-    .card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
-    .card.big h3 { font-size: 26px; }
-    .card-body { font-size: 14px; line-height: 1.7; opacity: 0.85; }
-    .card-take { margin-top: auto; padding-top: 14px; border-top: 2px solid currentColor; font-size: 12px; font-weight: 600; opacity: 0.7; }
-    .card.pink-card .card-take { border-color: rgba(255,255,255,0.3); }
-    .card.black-card .card-take { border-color: rgba(255,255,255,0.2); }
-    .card-take strong { opacity: 1; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 4px; }
-    .card-big-emoji { position: absolute; right: -10px; bottom: -10px; font-size: 80px; opacity: 0.1; line-height: 1; pointer-events: none; }
-    .status-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
-    .status-tag { background: var(--black); color: var(--white); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; padding: 3px 10px; border-radius: 4px; }
-    .status-tag.hot { background: var(--pink); color: var(--white); }
-    .status-tag.new-tag { background: var(--lime); color: var(--black); }
-    .status-tag.rip { background: #333; color: #aaa; }
-    .status-tag.spicy { background: #ff4400; color: white; }
-    .divider { height: 4px; background: repeating-linear-gradient(90deg, var(--black) 0px, var(--black) 20px, var(--white) 20px, var(--white) 24px); margin: 48px 0; }
+    .card.purple-card { background: #9B5DE5; color: var(--white); }
+    .card.orange-card { background: #FF6B35; color: var(--white); }
+    .card-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 4px 12px; border-radius: 100px; border: 2px solid currentColor; width: fit-content; }
+    .card.pink-card .card-badge, .card.purple-card .card-badge, .card.orange-card .card-badge { border-color: rgba(255,255,255,0.45); color: rgba(255,255,255,0.85); }
+    .card.black-card .card-badge { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.65); }
+    .card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 800; line-height: 1.25; letter-spacing: -0.01em; }
+    .card.big h3 { font-size: 23px; }
+    .card-body { font-size: 13.5px; line-height: 1.7; opacity: 0.85; }
+    .card-take { margin-top: auto; padding-top: 12px; border-top: 2px solid currentColor; font-size: 12px; font-weight: 600; opacity: 0.7; }
+    .card.pink-card .card-take, .card.purple-card .card-take, .card.orange-card .card-take { border-color: rgba(255,255,255,0.25); }
+    .card.black-card .card-take { border-color: rgba(255,255,255,0.15); }
+    .card-take strong { font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 4px; opacity: 1; }
+    .card-big-emoji { position: absolute; right: -8px; bottom: -8px; font-size: 72px; opacity: 0.1; line-height: 1; pointer-events: none; }
+    .status-bar { display: flex; gap: 8px; flex-wrap: wrap; }
+    .status-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 9px; border-radius: 4px; }
+    .s-hot { background: var(--pink); color: var(--white); }
+    .s-new { background: var(--lime); color: var(--black); }
+    .s-rip { background: #2a2a2a; color: #999; }
+    .s-fire { background: #ff4400; color: white; }
+    .s-tea { background: var(--yellow); color: var(--black); }
+    .divider { height: 4px; background: repeating-linear-gradient(90deg, var(--black) 0px, var(--black) 20px, var(--white) 20px, var(--white) 24px); margin: 52px 0; }
     footer { background: var(--black); color: var(--white); text-align: center; padding: 48px 40px; margin-top: 60px; }
     .footer-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 40px; font-weight: 800; background: linear-gradient(90deg, var(--pink), var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .footer-sub { color: rgba(255,255,255,0.5); font-size: 14px; margin-top: 8px; }
+    .footer-sub { color: rgba(255,255,255,0.45); font-size: 14px; margin-top: 8px; }
     .footer-sub span { color: var(--pink); }
-    @media (max-width: 768px) { main { padding: 20px; } header { padding: 32px 20px 24px; } .tea-bar { padding: 16px 20px; } .bento-2, .bento-3 { grid-template-columns: 1fr; } .card { border-radius: 14px; padding: 20px; } }
+    @media (max-width: 900px) { .bento-3, .bento-3b { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { main { padding: 16px; } header, .glance-bar, .tea-bar { padding: 24px 16px; } .bento-2, .bento-3, .bento-3b { grid-template-columns: 1fr; } .card { border-radius: 14px; padding: 18px; } }
   </style>
 </head>
 <body>
 
 <div class="ticker-wrap">
   <span class="ticker-content">
-    <span class="ticker-item">&#128293; Zendaya's stylist spilled she secretly MARRIED Tom Holland?!</span>
+    <span class="ticker-item">&#128293; Zendaya's stylist: "you missed the wedding" &#8212; mom not denying it</span>
     <span class="ticker-sep">&#10006;</span>
     <span class="ticker-item">&#128148; RIP McSteamy &#8212; Eric Dane passes at 52 from ALS</span>
     <span class="ticker-sep">&#10006;</span>
-    <span class="ticker-item">&#128081; Kim K + Lewis Hamilton couple mode in Arizona fr</span>
+    <span class="ticker-item">&#128081; Kim K + Lewis Hamilton romantic Arizona getaway</span>
     <span class="ticker-sep">&#10006;</span>
-    <span class="ticker-item">&#129318; Bill Clinton grilled about Epstein: "I don't know"</span>
+    <span class="ticker-item">&#127881; The Traitors: Rob Rausch wins $220k &#8212; betrayed his own ally Eric Nam at the end</span>
     <span class="ticker-sep">&#10006;</span>
-    <span class="ticker-item">&#128141; Did Zendaya already have the wedding and we missed it?!</span>
+    <span class="ticker-item">&#129318; Bill Clinton grilled about Epstein in Congress: "I don't know"</span>
     <span class="ticker-sep">&#10006;</span>
-    <span class="ticker-item">&#128557; BAFTA host Alan Cumming apologizes for "trauma-triggering" ceremony</span>
+    <span class="ticker-item">&#128556; Carrie Underwood gets BOOED on American Idol &#8212; speaks out</span>
     <span class="ticker-sep">&#10006;</span>
-    <span class="ticker-item">&#128128; Stalker arrested outside Jake Webber LA home</span>
+    <span class="ticker-item">&#128128; Bruce Campbell (Evil Dead) diagnosed with "treatable not curable" cancer</span>
     <span class="ticker-sep">&#10006;</span>
-    <span class="ticker-item">&#128081; Prince William's Royal modernization era is officially HERE</span>
+    <span class="ticker-item">&#127916; Scream 7 box office records &#8212; Wuthering Heights nearing $200M WW</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#127776; US-Iran air war escalating &#8212; Gulf entertainment industry on edge</span>
+    <span class="ticker-sep">&#10006;</span>
+    <span class="ticker-item">&#128081; William's Royal Family modernization era officially begins</span>
   </span>
 </div>
 
@@ -99,147 +114,241 @@
     <div class="meta-pill">Tuesday Mar 3, 2026</div>
     <div class="meta-pill">Issue No. 3</div>
     <div class="meta-pill">For Mandy &#128150;</div>
+    <div class="meta-pill">Powered by Wally</div>
   </div>
 </header>
 
+<div class="glance-bar">
+  <div class="glance-label">&#9749; Today at a glance</div>
+  <ul class="glance-list">
+    <li><strong>Did Zendaya secretly get married?</strong> Stylist Law Roach said "you missed it" on the red carpet. Zendaya's mom reposted it with a cryptic laugh emoji. The internet has not recovered.</li>
+    <li><strong>RIP Eric Dane (McSteamy).</strong> Grey's Anatomy icon passed away at 52 from ALS. His wife Rebecca Gayheart had withdrawn their divorce filing after his diagnosis and stayed by his side.</li>
+    <li><strong>The Traitors finale happened.</strong> Rob Rausch won $220,800 &#8212; and betrayed his last ally Eric Nam to do it. Eric Nam is now giving interviews about why he trusted him. Devastating and iconic in equal measure.</li>
+    <li><strong>Carrie Underwood got BOOED on American Idol</strong> during the Hollywood Week Nashville episode. She's spoken out. The internet is split.</li>
+    <li><strong>Bruce Campbell (Ash Williams, Evil Dead)</strong> shared a "treatable not curable" cancer diagnosis. First Eric Dane, now this. Rough week for beloved TV/film icons.</li>
+    <li><strong>Bill Clinton testified before Congress</strong> about Epstein and could not say with confidence that Epstein killed himself. "I've accepted it in my own mind" is not a yes, Bill.</li>
+    <li><strong>US-Iran conflict escalating:</strong> B-2 bombers hit Iranian nuclear infrastructure. Gulf film and TV industry is watching nervously &#8212; Dubai, UAE, Qatar and Saudi Arabia are processing what this means for production.</li>
+  </ul>
+</div>
+
 <div class="tea-bar">
-  <div class="tea-label">&#9749; today's tea &#8212; no cap edition</div>
+  <div class="tea-label">&#9749; today's tea &#8212; no cap</div>
   <div class="tea-items">
     <div class="tea-item">&#128141; Zendaya married?!</div>
-    <div class="tea-item">&#128148; Eric Dane gone</div>
-    <div class="tea-item">&#128081; Kim K era</div>
-    <div class="tea-item">&#129318; Clinton + Epstein</div>
+    <div class="tea-item">&#128148; Eric Dane RIP</div>
+    <div class="tea-item">&#127881; Traitors finale</div>
+    <div class="tea-item">&#128556; Carrie booed</div>
+    <div class="tea-item">&#128128; Bruce Campbell</div>
+    <div class="tea-item">&#129318; Clinton/Epstein</div>
+    <div class="tea-item">&#127776; Iran war</div>
     <div class="tea-item">&#128081; Royal rebrand</div>
-    <div class="tea-item">&#128557; BAFTA chaos</div>
   </div>
 </div>
 
 <main>
 
+  <!-- DATING ERA -->
   <div class="section-header">
     <span class="section-emoji">&#128158;</span>
     <span class="section-title">Dating Era</span>
     <div class="section-rule"></div>
-    <span class="section-vibe">it's giving... situationship to marriage pipeline</span>
+    <span class="section-vibe">it's giving situationship-to-marriage pipeline</span>
   </div>
-
   <div class="bento bento-3">
     <a class="card pink-card big" href="https://www.tmz.com/2026/03/03/zendaya-mom-reacts-to-tom-holland-marriage-claims/" target="_blank">
       <div class="card-big-emoji">&#128141;</div>
-      <div class="status-bar"><span class="status-tag hot">&#128293; TRENDING</span></div>
+      <div class="status-bar"><span class="status-tag s-hot">&#128293; MAIN CHARACTER</span></div>
       <div class="card-badge">&#128141; Wedding Watch</div>
-      <h3>Zendaya's Stylist Just Casually Announced She's MARRIED to Tom Holland and Her Mom Is Not Denying It</h3>
-      <div class="card-body">Law Roach was on the Actor Awards red carpet and just SAID IT &#8212; "you missed it" &#8212; implying Zendaya and Tom already had their wedding. Then Zendaya's mom Claire reposted the clip captioned "The laugh..." with a laughing emoji and literally zero denial. The internet has been unwell since. No cap, this might actually be real.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> The mom repost with "the laugh" is so sus. If it wasn't true she'd be denying it &#8212; not being cryptic and chaotic about it. They're married bestie. We just weren't invited.</div>
+      <h3>Zendaya's Stylist Just Casually Told the World She Already Married Tom Holland and the Mom Is NOT Denying It</h3>
+      <div class="card-body">Law Roach was on the Actor Awards red carpet and straight up said "you missed it" when asked about a Zendaya x Tom Holland wedding. Then Zendaya's mom Claire reposted the clip captioned "The laugh..." with a laughing emoji &#8212; zero denial, maximum chaos. The internet has been completely unwell ever since. No cap, bestie, this might actually be real.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> The mom repost with "the laugh" is SO sus. If it wasn't true she'd be denying it &#8212; not being cryptic. They're married. We just weren't invited. Congrats to them fr.</div>
     </a>
     <a class="card lime-card" href="https://www.tmz.com/2026/03/03/kim-k-and-lewis-hamilton-share-photos-arizona-getaway/" target="_blank">
       <div class="card-badge">&#128081; Couple Mode</div>
-      <h3>Kim K + Lewis Hamilton Are FULLY in Their Couple Era and the Arizona Photos Are Giving Everything</h3>
-      <div class="card-body">Kim and Lewis did a whole romantic Lake Powell getaway &#8212; matching scenery shots, zero thirst trap energy, and Lewis's shirtless jog video. This is the most low-key Kim has ever been about anything and honestly? Growth.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> Lewis said "I'm not playing games with this one" and Kim is eating it up. Different energy than we've ever seen from her. Rooting for them tbh.</div>
+      <h3>Kim K + Lewis Hamilton Fully in Their Couple Era &#8212; Arizona Getaway Photos Are Giving Everything</h3>
+      <div class="card-body">Kim and Lewis did a romantic Lake Powell trip and posted matching scenery shots with zero PR energy. No thirst traps, just vibes and Lewis's shirtless jog video. This is the most low-key Kim has EVER been and honestly? Slay.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Lewis said "I'm not playing games" and Kim is genuinely different with him. Rooting for this one tbh.</div>
     </a>
-    <a class="card yellow-card" href="https://www.tmz.com/2026/03/03/camila-cabello-birthday-sexiest-shots/" target="_blank">
-      <div class="card-badge">&#127874; Birthday Szn</div>
-      <h3>Camila Cabello Turned 29 and Reminded Everyone She's Still That Girl</h3>
-      <div class="card-body">Happy birthday to Camila! She's 29, unbothered, and glowing. Went through the whole Shawn-to-Austin era and came out the other side looking incredible. Se&#241;orita forever.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> She's in her comeback-girl era and it's working. The black bikini slay tradition continues.</div>
+    <a class="card yellow-card" href="https://www.eonline.com/news/1429024/jessica-biel-justin-timberlake-family-photo-album" target="_blank">
+      <div class="card-badge">&#128149; Family Album</div>
+      <h3>Jessica Biel + JT Drop Family Photos and It's Very Much "Crying a River" Era (the Good Kind)</h3>
+      <div class="card-body">Jessica Biel posted a sweet family photo album featuring her and Justin Timberlake with their sons Silas and Phineas. After a rocky 2024, they are clearly in a full family-first era. Boys look adorable. The internet is choosing to be happy about this one.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> They got through some stuff publicly and came out the other side. Quiet stability era &#8212; respect.</div>
     </a>
   </div>
 
   <div class="divider"></div>
 
+  <!-- LIFE EVENTS -->
   <div class="section-header">
     <span class="section-emoji">&#128148;</span>
     <span class="section-title">Life Events</span>
     <div class="section-rule"></div>
-    <span class="section-vibe">the ones that hit different</span>
+    <span class="section-vibe">the ones that actually hit</span>
   </div>
-
   <div class="bento bento-2">
     <a class="card black-card big" href="https://en.wikipedia.org/wiki/Eric_Dane" target="_blank">
       <div class="card-big-emoji">&#129658;</div>
-      <div class="status-bar"><span class="status-tag rip">&#128148; RIP</span></div>
+      <div class="status-bar"><span class="status-tag s-rip">&#128148; RIP</span></div>
       <div class="card-badge">&#128148; In Memoriam</div>
-      <h3>Eric Dane &#8212; McSteamy &#8212; Passes Away at 52 After Battle With ALS</h3>
-      <div class="card-body">Eric Dane, who was literally McSteamy on Grey's Anatomy (the hottest character on television for a decade), has passed from ALS. He was 52. His wife Rebecca Gayheart withdrew their divorce filing after his diagnosis and they spent his final time together. He leaves behind two daughters. This one genuinely hurts.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> Grey's Anatomy defined a generation and McSteamy was peak TV. Rebecca coming back when things got hard says everything. Rest easy. He was iconic no cap.</div>
+      <h3>Eric Dane &#8212; McSteamy &#8212; Passes Away at 52. Grey's Anatomy Will Never Be the Same.</h3>
+      <div class="card-body">Eric Dane, the man who invented the concept of "McSteamy" on Grey's Anatomy and made an entire generation feel things, has died at 52 from ALS. His wife Rebecca Gayheart had withdrawn their divorce filing after his diagnosis &#8212; she stayed by his side through everything. He leaves behind two daughters. This one genuinely hurts.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Grey's Anatomy defined a generation and McSteamy was peak television. The fact that Rebecca came back when things got hard says everything. Rest easy. Iconic no cap.</div>
     </a>
-    <a class="card white-card" href="https://www.tmz.com/2026/03/03/american-idol-alum-caleb-flynn-new-bodycam-footage/" target="_blank">
-      <div class="status-bar"><span class="status-tag spicy">&#128562; developing</span></div>
-      <div class="card-badge">&#128682; Crime Watch</div>
-      <h3>American Idol Alum Caleb Flynn Bodycam: "Is She Gone?" &#8212; New Footage Released</h3>
-      <div class="card-body">Body cam footage was released from the night Flynn's wife was allegedly shot by a burglar. He's seen outside sobbing, asking an officer repeatedly "Is she gone? Oh my God." Investigation still ongoing. The footage is a lot.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> There's a lot more to this story. Not speculating &#8212; just noting the investigation is active and this footage is genuinely difficult to watch.</div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <a class="card orange-card" href="https://www.eonline.com/videos/2490200131814/evil-dead-star-bruce-campbell-shares-treatable-not-curable-cancer-diagnosis" target="_blank">
+        <div class="status-bar"><span class="status-tag s-new">NEW</span></div>
+        <div class="card-badge">&#128128; Health Update</div>
+        <h3>Bruce Campbell (Evil Dead's Ash Williams) Shares "Treatable Not Curable" Cancer Diagnosis</h3>
+        <div class="card-body">Bruce Campbell &#8212; literally THE horror icon, Ash Williams from Evil Dead &#8212; announced he's been diagnosed with a type of cancer that is "treatable but not curable." He was direct and calm about it in his announcement. Horror fans worldwide are shaken.</div>
+        <div class="card-take"><strong>Pavano's take &#129302;</strong> Ash Williams himself said it with the same energy he'd say "Groovy." Sending love. Treatable is better than the alternative &#8212; we keep fighting.</div>
+      </a>
+      <a class="card white-card" href="https://www.eonline.com/news/1429229/christy-carlson-romano-cancer-screening-update" target="_blank">
+        <div class="card-badge">&#128139; Health Watch</div>
+        <h3>Christy Carlson Romano Gives Update After Cancer Screening Results "Did Not Come Back Negative"</h3>
+        <div class="card-body">Even Stevens and Kim Possible star Christy Carlson Romano updated fans after sharing weeks ago that her cancer screening results "did not come back negative." She's now sharing where things stand. The Disney Channel girlie staying strong.</div>
+        <div class="card-take"><strong>Pavano's take &#129302;</strong> She's been really open about this which takes guts. Wishing her the best.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- REALITY TV -->
+  <div class="section-header">
+    <span class="section-emoji">&#128250;</span>
+    <span class="section-title">Reality TV</span>
+    <div class="section-rule"></div>
+    <span class="section-vibe">it's giving chaos with production value</span>
+  </div>
+  <div class="bento bento-3">
+    <a class="card purple-card big" href="https://www.eonline.com/news/1429218/traitors-eric-nam-on-winner-rob-rauschs-betrayal" target="_blank">
+      <div class="card-big-emoji">&#127881;</div>
+      <div class="status-bar"><span class="status-tag s-hot">&#128293; FINALE DROP</span></div>
+      <div class="card-badge">&#128081; The Traitors US</div>
+      <h3>The Traitors Winner Is Rob Rausch &#8212; He Betrayed His Last Ally Eric Nam at the Final Table to Claim $220,800</h3>
+      <div class="card-body">Rob Rausch went completely solo in the Traitors finale, blindsiding Eric Nam &#8212; the one person who never flipped on him &#8212; to win the full $220,800 prize pot. Eric Nam is now doing interviews revealing he had no idea this was coming. The twist of the season. The internet is divided: evil king behavior or lowdown dirty move?</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Rob played the best game. Eric trusted him with his LIFE and Rob chose the bag. Morally grey but strategically flawless. That's Traitors. That's the game.</div>
+    </a>
+    <a class="card lime-card" href="https://www.eonline.com/news/1429230/carrie-underwood-on-being-booed-during-american-idol" target="_blank">
+      <div class="card-badge">&#128556; Drama Alert</div>
+      <h3>Carrie Underwood Got BOOED on American Idol and Now She's Clapping Back</h3>
+      <div class="card-body">During the Hollywood Week Music City Takeover episode, Carrie Underwood gave feedback to contestants and the audience started booing her. She's spoken out with a message for the fans. The internet is fully split &#8212; half defending her, half saying the boos were earned.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> She is a literal IDOL judge getting booed on American IDOL. The irony. The drama. The content. She'll be fine but this is going to follow her for a while.</div>
+    </a>
+    <a class="card blue-card" href="https://www.eonline.com/news/1429218/traitors-eric-nam-on-winner-rob-rauschs-betrayal" target="_blank">
+      <div class="card-badge">&#129299; Post-Game Tea</div>
+      <h3>Eric Nam Breaks Down Why He Never Flipped on Rob &#8212; The Answer Makes It So Much Worse</h3>
+      <div class="card-body">In a post-finale interview, Eric Nam explained his real reason for staying loyal to Rob Rausch until the very end: genuine trust. He genuinely thought Rob had his back. And then Rob won $220k by proving he didn't. This is deeply painful to read.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Eric Nam trusted a Traitor. That's... kind of the whole show. But the way he talks about it makes it so human. The best reality TV is just psychology.</div>
     </a>
   </div>
 
   <div class="divider"></div>
 
+  <!-- STREAMING & SHOWS -->
+  <div class="section-header">
+    <span class="section-emoji">&#127916;</span>
+    <span class="section-title">Streaming &amp; Shows</span>
+    <div class="section-rule"></div>
+    <span class="section-vibe">what to watch, what's trending, what just dropped</span>
+  </div>
+  <div class="bento bento-3b">
+    <a class="card yellow-card" href="https://deadline.com/2026/03/box-office-scream-7-pegasus-3-wuthering-heights-1236740458/" target="_blank">
+      <div class="status-bar"><span class="status-tag s-hot">&#128293; BOX OFFICE</span></div>
+      <div class="card-badge">&#127916; Cinema</div>
+      <h3>Scream 7 Is Breaking Records &#8212; And Wuthering Heights Is Quietly Nearing $200M Worldwide</h3>
+      <div class="card-body">Scream 7 opened loud with record numbers for the franchise while Wuthering Heights has been quietly building to nearly $200M worldwide and Pegasus 3 just zoomed past the half-billion mark globally. Strong box office weekend &#8212; people are going back to theaters fr.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Wuthering Heights at $200M worldwide is genuinely shocking. That's a romance literary adaptation eating. We love to see it.</div>
+    </a>
+    <a class="card black-card" href="https://deadline.com/2026/03/netflix-uk-longcross-studios-major-renovations-1236742334/" target="_blank">
+      <div class="card-badge">&#127909; Netflix</div>
+      <h3>Netflix's UK Studio Getting Major Renovations &#8212; Longcross Housed Guardians of the Galaxy and Skyfall</h3>
+      <div class="card-body">Longcross Studios in Surrey &#8212; home to major productions like Guardians of the Galaxy and Skyfall &#8212; has been granted planning permission for major renovations by Netflix. Netflix is clearly doubling down on UK production infrastructure in a big way.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Netflix investing heavily in UK production while Hollywood is complicated. Smart move. The accent-heavy era of content continues.</div>
+    </a>
+    <a class="card white-card" href="https://www.eonline.com/news/1429231/jamie-lee-curtis-on-daniel-radcliffe-harry-potter-role" target="_blank">
+      <div class="card-badge">&#10024; Reunion Szn</div>
+      <h3>Jamie Lee Curtis Predicted Daniel Radcliffe's Harry Potter Role &#8212; They Reunited and the Story Is Everything</h3>
+      <div class="card-body">Jamie Lee Curtis and Daniel Radcliffe reunited for the first time since The Tailor of Panama and she revealed she predicted he'd get Harry Potter. The way they talked about their long friendship and trajectory is so wholesome it should be illegal.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> These two have such a random and delightful friendship. Jamie Lee Curtis called it years before anyone else. Love a correct prophecy.</div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- THE DIRT -->
   <div class="section-header">
     <span class="section-emoji">&#129318;</span>
     <span class="section-title">The Dirt</span>
     <div class="section-rule"></div>
     <span class="section-vibe">lowkey the most important section</span>
   </div>
-
   <div class="bento bento-2">
-    <a class="card black-card" href="https://www.tmz.com/2026/03/03/bill-clinton-asked-about-jeffrey-epstein-suicide/" target="_blank">
+    <a class="card black-card big" href="https://www.tmz.com/2026/03/03/bill-clinton-asked-about-jeffrey-epstein-suicide/" target="_blank">
       <div class="card-big-emoji">&#129318;</div>
-      <div class="status-bar"><span class="status-tag hot">&#128293; BIG DEAL</span></div>
+      <div class="status-bar"><span class="status-tag s-fire">&#128293; CONGRESS HEARING</span></div>
       <div class="card-badge">&#128064; Epstein Watch</div>
-      <h3>Bill Clinton Grilled About Epstein in Front of Congress and His Answer Was... Interesting</h3>
-      <div class="card-body">Clinton testified before the House Oversight Committee. Lauren Boebert asked point blank: was Epstein suicidal? His answer: "I don't know. I only know what the medical finding was. I've accepted it in my own mind." He cannot say "yes he killed himself" with any confidence. The whole thing was tense and weird.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> "I've accepted it in my own mind" is the most politician non-answer in history. That is NOT a yes. The Epstein discourse never ends and this hearing is not helping.</div>
+      <h3>Bill Clinton Couldn't Say "Yes He Killed Himself" When Grilled by Congress &#8212; His Answer Is Wild</h3>
+      <div class="card-body">Clinton testified before the House Oversight Committee and Lauren Boebert asked point blank: was Epstein suicidal? His answer: "I don't know. I only know what the medical finding was. I've accepted it in my own mind." He cannot bring himself to say yes with any conviction. The whole testimony was tense and deeply strange. Everyone is talking about that one phrase.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> "I've accepted it in my own mind" is the most politician non-answer ever delivered. That is categorically NOT a yes. The Epstein discourse will never die and this hearing is not helping that.</div>
     </a>
     <a class="card yellow-card" href="https://www.tmz.com/2026/03/03/woman-arrested-at-jake-webbers-house/" target="_blank">
-      <div class="card-badge">&#128680; Celeb Safety</div>
-      <h3>Stalker Arrested Outside Jake Webber's LA Home After Midnight Break-In Attempt</h3>
-      <div class="card-body">A woman showed up at midnight and tried to open Jake Webber's front door. He called the cops, she was arrested for trespassing. Third major content-creator stalker incident this year. The parasocial-to-trespassing pipeline is getting scary.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> Glad he called the police immediately. Being famous and hyper-accessible online is genuinely complicated and dangerous. Stay safe out there.</div>
+      <div class="card-badge">&#128680; Safety Watch</div>
+      <h3>Stalker Arrested Outside Jake Webber's LA Home at Midnight &#8212; She Tried to Open His Front Door</h3>
+      <div class="card-body">A woman showed up to Jake Webber's house around midnight and tried to open his front door. He called the police, she was arrested for trespassing. Third major content creator stalker incident this year. The parasocial-to-trespassing pipeline is genuinely getting out of hand.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> He did the right thing immediately. Being hyper-accessible online while being a public figure is a complicated and dangerous reality. This is a systemic problem now.</div>
     </a>
   </div>
 
   <div class="divider"></div>
 
+  <!-- ROYAL WATCH -->
   <div class="section-header">
     <span class="section-emoji">&#128081;</span>
     <span class="section-title">Royal Watch</span>
     <div class="section-rule"></div>
-    <span class="section-vibe">the monarchy said "it's giving rebrand"</span>
+    <span class="section-vibe">the monarchy said "it's giving rebrand era"</span>
   </div>
-
   <div class="bento bento-2">
     <a class="card blue-card" href="https://www.express.co.uk/news/royal/2026/03/prince-william-modernising-royal-family" target="_blank">
       <div class="card-badge">&#10024; ERA</div>
-      <h3>William's Royal Modernization Plans Are Out and He's Not Playing &#8212; Andrew Was the Wake-Up Call</h3>
-      <div class="card-body">Prince William laid out plans to slim down and modernize the Firm. The Andrew/Epstein implosion gave him the political cover he needed to push it through. Smaller working roster, updated comms, cleaner lines between The Firm and scandal-adjacent family members. The William era starts now.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> William has been waiting for leverage for years. Andrew handed it to him. Sometimes the scandal is the catalyst. Monarchy rebrand arc is very real.</div>
+      <h3>William's Royal Modernization Plans Are Out and He's Serious &#8212; Andrew Chaos Was Exactly the Leverage He Needed</h3>
+      <div class="card-body">Prince William has laid out a real modernization agenda for the Royal Family. Insiders say the ongoing Andrew/Epstein implosion gave him the political cover to finally push these changes through &#8212; smaller working royal roster, updated comms strategy, cleaner separation from scandal-adjacent members. The William era has officially started.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> William's been waiting for leverage for years. Andrew handed it to him on a plate. Sometimes the family disaster is the catalyst. Monarchy glow-up arc: active.</div>
     </a>
     <a class="card white-card" href="https://www.realitytea.com" target="_blank">
-      <div class="card-badge">&#128128; EXPIRED</div>
-      <h3>Harry's Big Reconciliation Offer Is Not Landing &#8212; Brothers at "All-Time Low"</h3>
-      <div class="card-body">Harry's major offer to William is reportedly getting nowhere. Sources say the brothers are at an all-time low. William &#8212; focused on Kate and the kids post-cancer remission &#8212; is not prioritizing any Harry timeline. The gap is widening.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> William watched his wife fight cancer and came out with a very clear sense of what matters to him. Harry is not currently on that list. This one might not get fixed.</div>
+      <div class="status-bar"><span class="status-tag s-rip">&#128128; EXPIRED</span></div>
+      <div class="card-badge">&#128148; Brother Watch</div>
+      <h3>Harry's Reconciliation Offer Is Getting Nowhere &#8212; Brothers "At an All-Time Low" Per Sources</h3>
+      <div class="card-body">Harry has reportedly made a major offer to William in an attempt at reconciliation &#8212; and it's not landing at all. Royal sources say the brothers are at an all-time low and William, focused entirely on Kate and the kids post-cancer remission, is not prioritizing any Harry timeline. The gap is getting wider, not smaller.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> William watched his wife fight cancer and came out with a very clear sense of what matters. Harry is not currently on that list. This one might genuinely not get fixed.</div>
     </a>
   </div>
 
   <div class="divider"></div>
 
+  <!-- WORLD DRAMA -->
   <div class="section-header">
-    <span class="section-emoji">&#128557;</span>
-    <span class="section-title">Culture + Chaos</span>
+    <span class="section-emoji">&#127776;</span>
+    <span class="section-title">World Drama</span>
     <div class="section-rule"></div>
-    <span class="section-vibe">it's giving... disaster with good intentions</span>
+    <span class="section-vibe">when the news affects your watchlist</span>
   </div>
-
-  <div class="bento bento-1">
-    <a class="card pink-card" href="https://www.tmz.com/2026/03/03/alan-cumming-apologizes-after-bafta-racial-slur-moment/" target="_blank">
-      <div class="card-big-emoji">&#127917;</div>
-      <div class="status-bar"><span class="status-tag new-tag">NEW</span></div>
-      <div class="card-badge">&#127916; Awards Drama</div>
-      <h3>BAFTA Host Alan Cumming Calls the Whole Show a "Trauma-Triggering S***show" &#8212; Says What We Were All Thinking</h3>
-      <div class="card-body">Alan Cumming officially spoke out about the BAFTA incident where Tourette's activist John Davidson shouted a slur live on air. He called it a "trauma-triggering s***show," apologized to the Black community, AND threw shade at the BAFTAs and BBC for both broadcasting the slur and censoring free speech. He held multiple perspectives at once which is genuinely impressive. The Tourette's community is also still getting dogpiled and he addressed that too.</div>
-      <div class="card-take"><strong>Pavano's take &#129302;</strong> "Trauma-triggering s***show" is now officially an awards ceremony category. The BAFTAs made every wrong call in real time and Cumming just confirmed it publicly. Respect for addressing all sides of it.</div>
+  <div class="bento bento-2">
+    <a class="card orange-card big" href="https://deadline.com/2026/03/gulf-film-tv-world-middle-east-conflict-reaction-1236741086/" target="_blank">
+      <div class="card-big-emoji">&#127776;</div>
+      <div class="status-bar"><span class="status-tag s-fire">&#128293; ESCALATING</span></div>
+      <div class="card-badge">&#127776; Global Impact</div>
+      <h3>US-Iran Air War Is Escalating &#8212; Gulf Film and TV Industry Is Holding Its Breath as B-2 Bombers Hit Nuclear Sites</h3>
+      <div class="card-body">B-2 stealth bombers hit Iranian nuclear infrastructure. Iran struck an oil tanker off Oman. Lebanon, Iraq and Cyprus are now involved. For the entertainment world: Dubai, UAE, Qatar and Saudi Arabia &#8212; major production hubs with billions in film/TV investment &#8212; are watching nervously and trying to project business-as-usual. Deadline has a full piece on what this means for Gulf entertainment. Short answer: a lot.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> The regional war everyone feared is starting to materialize. The Gulf entertainment boom has been one of the biggest stories in global media for 5 years. If this escalates further, that story changes fast.</div>
+    </a>
+    <a class="card black-card" href="https://deadline.com/2026/03/gulf-film-tv-world-middle-east-conflict-reaction-1236741086/" target="_blank">
+      <div class="card-badge">&#127909; Industry Impact</div>
+      <h3>What the Iran Conflict Means for Dubai, Qatar, and Saudi Arabia's Film &amp; TV Industries</h3>
+      <div class="card-body">Deadline's deep dive into how film and TV professionals across neighboring territories &#8212; UAE, Qatar, Saudi Arabia &#8212; are processing the military escalation. The public posture is business-as-usual. The private conversations are reportedly much more anxious. Billions in planned productions hang in the balance.</div>
+      <div class="card-take"><strong>Pavano's take &#129302;</strong> Saudi Arabia has invested massively in becoming a global entertainment destination. This is the stress test for all of that. Worth watching closely.</div>
     </a>
   </div>
 
@@ -248,7 +357,7 @@
 <footer>
   <div class="footer-title">MANDY INTEL</div>
   <div class="footer-sub">curated by pavano &#129302; for mandy <span>&#128150;</span></div>
-  <div class="footer-sub" style="margin-top:8px; font-size:12px;">Tuesday, March 3, 2026 &middot; no cap, no filter &middot; bestie-approved tea</div>
+  <div class="footer-sub" style="margin-top:6px;font-size:12px;">Tuesday, March 3, 2026 &middot; no cap, no filter &middot; bestie-approved tea</div>
 </footer>
 
 </body>
